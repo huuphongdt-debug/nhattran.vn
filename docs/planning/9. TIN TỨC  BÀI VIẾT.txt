@@ -1,0 +1,31 @@
+9. TIN TỨC / BÀI VIẾT
+
+Đây là phần đặc biệt phù hợp với yêu cầu:
+
+"admin có thể đăng thông tin dịch vụ hằng ngày"
+
+Ta không nên gọi nó đơn giản là "Tin tức".
+
+Nên xây thành CMS bài viết.
+
+Admin có thể:
+
++ Thêm bài viết
+
+Sau đó:
+
+Tiêu đề
+Ảnh đại diện
+Nội dung
+Danh mục
+Tác giả
+Ngày đăng
+Trạng thái
+
+Ví dụ:
+
+NHẬT TRẦN HOÀN THÀNH DỰ ÁN NÂNG CẤP HỆ THỐNG ĐIỀU KHIỂN
+
+Admin viết bài → đăng → website tự hiển thị.
+
+Không cần bạn can thiệp.

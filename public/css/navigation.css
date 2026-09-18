@@ -1,0 +1,55 @@
+/*
+ * CSS header và menu công khai; trạng thái menu được site.js điều khiển.
+ * Cần kiểm tra đồng thời desktop/mobile khi thay đổi selector hoặc breakpoint.
+ */
+/* Menu dùng chung. Chỉnh cỡ chữ, khoảng cách và breakpoint tại đây. */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    height: 90px;
+    background: rgba(255, 255, 255, .98);
+    box-shadow: 0 2px 7px rgba(15, 35, 60, .08);
+}
+.site-header.is-scrolled { box-shadow: 0 7px 20px rgba(15, 35, 60, .13); }
+.site-header .header-inner {
+    width: min(1280px, calc(100% - 40px));
+    height: 100%;
+    min-height: 0;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+}
+.brand { display: flex; align-items: center; height: 100%; flex-shrink: 0; }
+.brand img { display: block; width: auto; max-width: 150px; height: 64px; object-fit: contain; }
+.main-nav { display: flex; align-items: center; gap: 20px; }
+.main-nav > a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    color: var(--primary);
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+}
+.main-nav > a:hover, .main-nav > a.active { color: var(--accent); }
+.header-search { display: flex; align-items: center; width: 200px; height: 42px; flex-shrink: 0; overflow: hidden; border: 1px solid #cbd5e1; border-radius: 8px; background: white; }
+.header-search:focus-within { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(37, 99, 235, .12); }
+.header-search input { width: 100%; min-width: 0; height: 100%; padding: 0 12px; border: 0; outline: 0; color: var(--text); font: inherit; font-size: 14px; }
+.header-search input::placeholder { color: #64748b; }
+.header-search button { display: grid; place-items: center; flex: 0 0 42px; height: 42px; border: 0; background: var(--accent); color: white; cursor: pointer; }
+.header-search button:hover { background: var(--accent-hover); }
+.menu-toggle { display: none; border: 0; background: transparent; color: var(--primary); font-size: 24px; min-width: 44px; min-height: 44px; cursor: pointer; }
+@media (max-width: 1200px) {
+    .site-header { height: 74px; }
+    .brand img { max-width: 125px; height: 52px; }
+    .menu-toggle { display: inline-flex; align-items: center; justify-content: center; }
+    .main-nav { display: none; position: absolute; top: 100%; left: 0; width: 100%; flex-direction: column; align-items: stretch; gap: 4px; padding: 16px 20px; background: white; box-shadow: var(--shadow); max-height: calc(100dvh - 74px); overflow-y: auto; }
+    .main-nav.open { display: flex; }
+    .main-nav > a { padding: 10px 12px; font-size: 16px; }
+    .header-search { width: 100%; margin-top: 8px; }
+}

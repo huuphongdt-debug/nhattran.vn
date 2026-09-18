@@ -1,0 +1,42 @@
+13. Bảng settings
+
+Đây là bảng cực kỳ hữu ích.
+
+Nó lưu các thông tin chung của doanh nghiệp.
+
+settings
+Trường	Kiểu
+id	INT
+setting_key	VARCHAR(100)
+setting_value	LONGTEXT
+updated_at	DATETIME
+
+Ví dụ:
+
+company_name
+company_description
+company_address
+company_phone
+company_email
+company_zalo
+company_facebook
+company_youtube
+company_logo
+company_favicon
+google_map
+
+Như vậy nếu doanh nghiệp đổi:
+
+Số điện thoại
+
+họ chỉ cần:
+
+Admin
+ ↓
+Cài đặt website
+ ↓
+Số điện thoại
+ ↓
+Lưu
+
+Toàn bộ website tự thay đổi.

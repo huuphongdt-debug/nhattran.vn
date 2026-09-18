@@ -1,0 +1,38 @@
+6. Bảng product_images
+
+Một sản phẩm có thể có nhiều hình ảnh.
+
+Ví dụ:
+
+PLC FX5U
+
+Ảnh 1: mặt trước
+Ảnh 2: mặt sau
+Ảnh 3: cổng kết nối
+Ảnh 4: thực tế
+
+Không nên nhét tất cả vào products.
+
+Ta tạo:
+
+product_images
+Trường	Kiểu
+id	INT
+product_id	INT
+image	VARCHAR(255)
+alt_text	VARCHAR(255)
+sort_order	INT
+created_at	DATETIME
+
+Quan hệ:
+
+products
+   │
+   │ 1
+   │
+   ├───────────┐
+   │           │
+   ▼           ▼
+image       image
+
+Một sản phẩm → nhiều ảnh.

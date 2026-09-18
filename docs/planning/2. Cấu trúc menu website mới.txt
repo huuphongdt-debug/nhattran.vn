@@ -1,0 +1,48 @@
+TRANG CHỦ
+
+GIỚI THIỆU
+
+SẢN PHẨM
+    ├── Thiết bị điện công nghiệp
+    ├── Thiết bị tự động hóa
+    ├── PLC
+    ├── HMI
+    ├── Servo
+    ├── Biến tần
+    ├── Cảm biến
+    └── Sản phẩm khác
+
+DỊCH VỤ
+    ├── Sửa chữa thiết bị điện công nghiệp
+    ├── Sửa chữa thiết bị cơ khí
+    ├── Sửa chữa Servo
+    ├── Phục hồi PCB
+    └── Dịch vụ khác
+
+DỰ ÁN
+
+TIN TỨC
+
+LIÊN HỆ
+
+
+
+
+uy nhiên có một điểm tôi muốn không cố định danh mục sản phẩm bằng code.
+
+Ví dụ Admin có thể tự tạo:
+
+SẢN PHẨM
+    ├── PLC
+    ├── HMI
+    ├── Servo
+    ├── Biến tần
+    ├── Robot
+    ├── Cảm biến
+    └── ...
+
+Sau này công ty kinh doanh thêm Robot chẳng hạn, họ chỉ cần:
+
+Admin → Danh mục → Thêm danh mục → Robot
+
+Không cần bạn sửa code.

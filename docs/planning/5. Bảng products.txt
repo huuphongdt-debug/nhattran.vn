@@ -1,0 +1,42 @@
+5. Bảng products
+
+Đây là bảng quan trọng nhất.
+
+products
+Trường	Kiểu
+id	INT
+category_id	INT
+name	VARCHAR(255)
+slug	VARCHAR(255)
+product_code	VARCHAR(100)
+brand	VARCHAR(100)
+short_description	TEXT
+description	LONGTEXT
+specifications	LONGTEXT
+main_image	VARCHAR(255)
+document	VARCHAR(255)
+featured	TINYINT
+status	TINYINT
+sort_order	INT
+created_at	DATETIME
+updated_at	DATETIME
+
+Ví dụ:
+
+Tên:
+PLC Mitsubishi FX5U
+
+Mã:
+FX5U-32MT
+
+Thương hiệu:
+Mitsubishi
+
+Mô tả:
+...
+
+Thông số:
+...
+
+Ảnh:
+uploads/products/fx5u.jpg

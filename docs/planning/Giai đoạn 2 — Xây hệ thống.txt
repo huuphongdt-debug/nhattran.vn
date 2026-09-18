@@ -1,0 +1,9 @@
+PHP
++
+MySQL
++
+HTML/CSS/JS
+        ↓
+Website
+        +
+Admin CMS

@@ -1,0 +1,26 @@
+9. Bảng post_categories
+
+Bảng này giúp bài viết có danh mục.
+
+Ví dụ:
+
+TIN TỨC
+│
+├── Hoạt động công ty
+├── Dự án
+├── Kiến thức tự động hóa
+├── Sản phẩm mới
+└── Thông báo
+
+Ta có:
+
+post_categories
+Trường	Kiểu
+id	INT
+name	VARCHAR(150)
+slug	VARCHAR(180)
+description	TEXT
+status	TINYINT
+sort_order	INT
+created_at	DATETIME
+updated_at	DATETIME

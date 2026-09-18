@@ -1,0 +1,53 @@
+13. Bây giờ đến phần QUAN TRỌNG NHẤT: ADMIN
+
+Tôi muốn Admin của chúng ta có cấu trúc:
+
+/admin
+
+Đăng nhập:
+
+┌─────────────────────────┐
+│       NHẬT TRẦN         │
+│                         │
+│ Username                │
+│ [________________]      │
+│                         │
+│ Password                │
+│ [________________]      │
+│                         │
+│       [ĐĂNG NHẬP]       │
+└─────────────────────────┘
+
+Sau khi đăng nhập:
+
+ADMIN DASHBOARD
+│
+├── Tổng quan
+│
+├── Sản phẩm
+│   ├── Tất cả sản phẩm
+│   ├── Thêm sản phẩm
+│   └── Danh mục
+│
+├── Dịch vụ
+│   ├── Tất cả dịch vụ
+│   └── Thêm dịch vụ
+│
+├── Bài viết
+│   ├── Tất cả bài viết
+│   ├── Thêm bài viết
+│   └── Danh mục
+│
+├── Dự án
+│   ├── Tất cả dự án
+│   └── Thêm dự án
+│
+├── Banner
+│
+├── Thư viện hình ảnh
+│
+├── Liên hệ
+│
+├── Cài đặt website
+│
+└── Tài khoản

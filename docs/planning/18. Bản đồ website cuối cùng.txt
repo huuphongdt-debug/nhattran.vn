@@ -1,0 +1,41 @@
+18. Bản đồ website cuối cùng
+
+Tôi đề xuất chốt kiến trúc như sau:
+
+                         NHATTRAN.VN
+                              │
+        ┌─────────────────────┼─────────────────────┐
+        │                     │                     │
+     TRANG CHỦ             SẢN PHẨM             DỊCH VỤ
+        │                     │                     │
+        │                Danh mục               Danh mục
+        │                     │                     │
+        │                Sản phẩm               Chi tiết
+        │                     │
+        │                Chi tiết SP
+        │
+        ├── GIỚI THIỆU
+        │
+        ├── DỰ ÁN
+        │
+        ├── TIN TỨC
+        │
+        └── LIÊN HỆ
+
+
+                         /admin
+                            │
+             ┌──────────────┼──────────────┐
+             │              │              │
+         SẢN PHẨM        DỊCH VỤ        BÀI VIẾT
+             │              │              │
+         Danh mục       Thêm/Sửa       Thêm/Sửa
+         Thêm/Sửa       Xóa             Xóa
+         Xóa
+             │
+             ├── DỰ ÁN
+             ├── BANNER
+             ├── MEDIA
+             ├── LIÊN HỆ
+             ├── CÀI ĐẶT
+             └── TÀI KHOẢN

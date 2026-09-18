@@ -1,0 +1,25 @@
+nha20036_nhattran
+│
+├── users
+├── roles
+├── permissions
+├── user_roles
+├── role_permissions
+│
+├── settings
+├── pages
+├── media
+│
+├── posts
+├── post_categories
+├── post_category_map
+│
+├── products
+├── product_categories
+├── product_images
+│
+├── customers
+├── orders
+├── order_items
+│
+└── contact_messages

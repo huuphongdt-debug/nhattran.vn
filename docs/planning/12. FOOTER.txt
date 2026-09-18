@@ -1,0 +1,25 @@
+12. FOOTER
+
+Footer nên có:
+
+NHẬT TRẦN
+Thông tin ngắn về doanh nghiệp
+
+THÔNG TIN
+- Giới thiệu
+- Dịch vụ
+- Sản phẩm
+- Dự án
+
+HỖ TRỢ
+- Liên hệ
+- Zalo
+- Facebook
+- Email
+
+LIÊN HỆ
+Địa chỉ
+Hotline
+Email
+
+© 2026 NHẬT TRẦN

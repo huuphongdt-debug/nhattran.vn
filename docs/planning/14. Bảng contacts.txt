@@ -1,0 +1,26 @@
+14. Bảng contacts
+
+Khi khách hàng gửi form liên hệ:
+
+contacts
+Trường	Kiểu
+id	INT
+name	VARCHAR(150)
+phone	VARCHAR(30)
+email	VARCHAR(150)
+subject	VARCHAR(255)
+message	TEXT
+status	TINYINT
+created_at	DATETIME
+
+Admin có thể thấy:
+
+LIÊN HỆ
+
+Nguyễn Văn A
+0912xxxxxx
+nguyenvana@gmail.com
+
+"Tôi muốn hỏi về PLC Mitsubishi..."
+
+[Đã xem]

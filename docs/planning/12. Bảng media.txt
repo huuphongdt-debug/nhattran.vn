@@ -1,0 +1,36 @@
+12. Bảng media
+
+Đây là thư viện hình ảnh.
+
+media
+
+Ví dụ Admin upload:
+
+media/
+├── logo.png
+├── banner01.jpg
+├── product01.jpg
+├── project01.jpg
+├── service01.jpg
+└── ...
+
+Database:
+
+Trường	Kiểu
+id	INT
+file_name	VARCHAR(255)
+file_path	VARCHAR(255)
+file_type	VARCHAR(100)
+file_size	INT
+alt_text	VARCHAR(255)
+uploaded_by	INT
+created_at	DATETIME
+
+Sau này Admin có thể có giao diện:
+
+THƯ VIỆN MEDIA
+
+[ảnh] [ảnh] [ảnh] [ảnh]
+[ảnh] [ảnh] [ảnh] [ảnh]
+
+       [ + TẢI ẢNH ]

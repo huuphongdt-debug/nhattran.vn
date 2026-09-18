@@ -1,0 +1,50 @@
+4. Bảng categories
+
+Quản lý danh mục sản phẩm.
+
+categories
+
+Ví dụ:
+
+Thiết bị tự động hóa
+│
+├── PLC
+├── HMI
+├── Servo
+├── Biến tần
+├── Cảm biến
+└── Robot
+
+Các trường:
+
+Trường	Kiểu
+id	INT
+name	VARCHAR(150)
+slug	VARCHAR(180)
+description	TEXT
+image	VARCHAR(255)
+parent_id	INT
+status	TINYINT
+sort_order	INT
+created_at	DATETIME
+updated_at	DATETIME
+
+Điểm đáng chú ý:
+
+parent_id
+
+cho phép chúng ta tạo danh mục nhiều cấp.
+
+Ví dụ:
+
+Thiết bị tự động hóa
+       │
+       ├── PLC
+       │     ├── Mitsubishi
+       │     └── Siemens
+       │
+       └── Servo
+             ├── Mitsubishi
+             └── Yaskawa
+
+Sau này mở rộng rất dễ.

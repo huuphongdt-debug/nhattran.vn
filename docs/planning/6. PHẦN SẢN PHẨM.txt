@@ -1,0 +1,28 @@
+6. PHẦN SẢN PHẨM
+
+Đây sẽ là module lớn nhất.
+
+Website:
+
+/san-pham
+
+Có:
+
+Danh mục
+      ↓
+Danh sách sản phẩm
+      ↓
+Chi tiết sản phẩm
+
+Ví dụ:
+
+PLC
+────────────────────────
+
+[Ảnh] Mitsubishi FX5U
+      Mã: FX5U-32MT
+      [Xem chi tiết]
+
+[Ảnh] Mitsubishi FX3U
+      Mã: FX3U-...
+      [Xem chi tiết]

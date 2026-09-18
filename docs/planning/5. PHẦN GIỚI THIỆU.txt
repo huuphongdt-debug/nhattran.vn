@@ -1,0 +1,31 @@
+5. PHẦN GIỚI THIỆU
+
+Tôi đề xuất có:
+
+Trang /gioi-thieu
+
+Bao gồm:
+
+Giới thiệu công ty
+Lịch sử hình thành
+Lĩnh vực hoạt động
+Năng lực
+Đội ngũ
+Đối tác
+Hình ảnh công ty
+
+Nhưng quan trọng:
+
+Tất cả nội dung phải quản lý được từ Admin.
+
+Ví dụ:
+
+Admin
+ ↓
+Nội dung website
+ ↓
+Giới thiệu
+ ↓
+[Trình soạn thảo]
+
+Doanh nghiệp có thể sửa nội dung như Word.

@@ -1,0 +1,367 @@
+                    NHATTRAN.VN
+                         │
+             ┌───────────┴───────────┐
+             │                       │
+         WEBSITE                 ADMIN CMS
+       Khách truy cập          Nhân viên quản lý
+             │                       │
+             │                       ├── Sản phẩm
+             │                       ├── Dịch vụ
+             │                       ├── Bài viết
+             │                       ├── Hình ảnh
+             │                       └── Thông tin công ty
+             │
+             ↓
+          MySQL
+
+
+
+Admin
+ ↓
++ Thêm sản phẩm
+ ↓
+Nhập tên
+Nhập mã
+Chọn danh mục
+Upload ảnh
+Nhập mô tả
+Nhập thông số kỹ thuật
+ ↓
+Lưu
+ ↓
+Website tự xuất hiện sản phẩm
+
+
+
+3. Vì sao chúng ta làm cấu trúc này?
+
+Sau này hệ thống sẽ đi theo kiểu:
+
+                 NHAT TRAN
+                    │
+          ┌─────────┴─────────┐
+          │                   │
+       WEBSITE              ADMIN
+          │                   │
+          └─────────┬─────────┘
+                    │
+                 PHP APP
+                    │
+          ┌─────────┴─────────┐
+          │                   │
+       Models             Controllers
+          │                   │
+          └─────────┬─────────┘
+                    │
+                 MySQL
+          nha20036_nhattran
+
+Ví dụ sau này quản lý sản phẩm:
+
+admin/products/
+        ↓
+ProductsController.php
+        ↓
+Product.php
+        ↓
+products
+product_categories
+product_images
+
+Như vậy khi doanh nghiệp muốn thêm chức năng mới, chúng ta có thể thêm module mới thay vì sửa lung tung toàn bộ website.
+
+| Bước    | Nội dung                         | Trạng thái  |
+| ------- | -------------------------------- | ----------- |
+| 3.1     | Danh sách danh mục               | ✅ Xong      |
+| 3.2     | Thêm danh mục                    | ✅ Xong      |
+| **3.3** | **Sửa danh mục**                 | 🔵 Làm tiếp |
+| **3.4** | **Xóa danh mục**                 | ⏳           |
+| **3.5** | **Quản lý sản phẩm**             | ⏳           |
+| 3.6     | Thêm sản phẩm                    | ⏳           |
+| 3.7     | Sửa sản phẩm                     | ⏳           |
+| 3.8     | Xóa sản phẩm                     | ⏳           |
+| 3.9     | Draft / Active                   | ⏳           |
+| 3.10    | Đưa sản phẩm từ Admin ra website | ⏳           |
+
+
+
+products.php
+      ↓
++ Thêm sản phẩm
+      ↓
+product-create.php
+      ↓
+Nhập thông tin
+      ↓
+Lưu vào bảng products
+      ↓
+Quay lại products.php
+
+
+
+NHAT TRAN ADMIN
+│
+├── Dashboard
+│
+├── Sản phẩm
+│   ├── Tất cả sản phẩm
+│   ├── Thêm sản phẩm
+│   ├── Sửa sản phẩm
+│   ├── Xóa sản phẩm
+│   └── Danh mục
+│
+├── Dịch vụ
+│   ├── Tất cả dịch vụ
+│   ├── Thêm dịch vụ
+│   └── Sửa / Xóa
+│
+├── Nội dung
+│   ├── Bài viết
+│   ├── Trang
+│   └── Thư viện
+│
+└── Hệ thống
+    ├── Cài đặt website
+    ├── Tài khoản Admin
+    └── Đăng xuất
+
+
+
+
+┌──────────────────────────────────────────────────────────────┐
+│ NHAT TRAN                  Dashboard       Administrator     │
+├───────────────┬──────────────────────────────────────────────┤
+│               │                                              │
+│ Dashboard     │  Xin chào, Administrator                    │
+│               │  Chào mừng bạn đến hệ thống quản trị...      │
+│ Sản phẩm      │                                              │
+│               │  ┌────────────┐  ┌────────────┐              │
+│ Danh mục      │  │ Sản phẩm   │  │ Danh mục   │              │
+│               │  │     0      │  │     0      │              │
+│ Dịch vụ       │  └────────────┘  └────────────┘              │
+│               │                                              │
+│ Bài viết      │  ┌────────────┐  ┌────────────┐              │
+│               │  │ Dịch vụ    │  │ Bài viết   │              │
+│ Trang         │  │     0      │  │     0      │              │
+│               │  └────────────┘  └────────────┘              │
+│ Thư viện      │                                              │
+│               │  Thao tác nhanh                               │
+│ Cài đặt       │                                              │
+│               │  ┌────────────┐  ┌────────────┐              │
+│               │  │+ Sản phẩm  │  │+ Danh mục  │              │
+│               │  └────────────┘  └────────────┘              │
+│               │                                              │
+│               │  ┌────────────┐  ┌────────────┐              │
+│               │  │+ Dịch vụ   │  │+ Viết bài  │              │
+│               │  └────────────┘  └────────────┘              │
+└───────────────┴──────────────────────────────────────────────┘
+
+
+
+Dashboard
+
+Sản phẩm
+  ├── Tất cả sản phẩm
+  ├── Thêm sản phẩm
+  └── Danh mục sản phẩm
+
+Dịch vụ
+  ├── Tất cả dịch vụ
+  └── Thêm dịch vụ
+
+Bài viết
+  ├── Tất cả bài viết
+  └── Viết bài mới
+
+Trang
+  ├── Trang chủ
+  ├── Giới thiệu
+  └── Liên hệ
+
+Thư viện
+  ├── Hình ảnh
+  └── Video
+
+Cài đặt
+  ├── Thông tin website
+  └── Tài khoản
+
+
+
+
+NHATTRAN/
+│
+├── admin/
+│   │
+│   ├── dashboard.php
+│   ├── login.php
+│   ├── logout.php
+│   │
+│   ├── products/
+│   │   ├── products.php
+│   │   ├── product-create.php
+│   │   ├── product-edit.php
+│   │   └── product-delete.php
+│   │
+│   ├── categories/
+│   │   ├── categories.php
+│   │   ├── category-create.php
+│   │   ├── category-edit.php
+│   │   └── category-delete.php
+│   │
+│   ├── services/
+│   │   ├── services.php
+│   │   ├── service-create.php
+│   │   ├── service-edit.php
+│   │   └── service-delete.php
+│   │
+│   ├── posts/
+│   │   ├── posts.php
+│   │   ├── post-create.php
+│   │   ├── post-edit.php
+│   │   └── post-delete.php
+│   │
+│   ├── pages/
+│   │   ├── pages.php
+│   │   └── page-edit.php
+│   │
+│   ├── media/
+│   │   └── media.php
+│   │
+│   └── settings/
+│       └── settings.php
+│
+├── app/
+│   │
+│   ├── Controllers/
+│   │   ├── AuthController.php
+│   │   ├── ProductController.php
+│   │   ├── ProductCategoryController.php
+│   │   ├── ServiceController.php
+│   │   └── PostController.php
+│   │
+│   ├── Models/
+│   │   ├── User.php
+│   │   ├── Product.php
+│   │   ├── ProductCategory.php
+│   │   ├── Service.php
+│   │   └── Post.php
+│   │
+│   └── Helpers/
+│
+├── config/
+│   └── database.php
+│
+└── uploads/
+    ├── products/
+    ├── posts/
+    └── media/
+
+Một điểm rất quan trọng
+
+Từ bây giờ không nên viết từng file một cách rời rạc nữa.
+
+Mình đề xuất chúng ta xây theo từng module hoàn chỉnh:
+
+BƯỚC 1 — Hệ thống nền
+
+database.php
+User.php
+AuthController.php
+login.php
+logout.php
+
+BƯỚC 2 — Danh mục sản phẩm
+
+ProductCategory.php
+ProductCategoryController.php
+
+admin/categories/
+├── categories.php
+├── category-create.php
+├── category-edit.php
+└── category-delete.php
+
+BƯỚC 3 — Sản phẩm
+
+Product.php
+ProductController.php
+
+admin/products/
+├── products.php
+├── product-create.php
+├── product-edit.php
+└── product-delete.php
+
+BƯỚC 4 — Dịch vụ
+
+BƯỚC 5 — Bài viết
+
+BƯỚC 6 — Trang
+
+BƯỚC 7 — Thư viện
+
+BƯỚC 8 — Cài đặt
+
+BƯỚC 9 — Hoàn thiện Dashboard
+
+
+BƯỚC 1
+Database
+product_categories
+    ↓
+thêm parent_id
+
+        ↓
+
+BƯỚC 2
+ProductCategory.php
+    ↓
+thêm lấy danh mục cha/con
+thêm cây danh mục
+
+        ↓
+
+BƯỚC 3
+ProductCategoryController.php
+    ↓
+xử lý parent_id
+kiểm tra không cho tạo vòng lặp
+
+        ↓
+
+BƯỚC 4
+categories.php
+    ↓
+hiển thị cây danh mục
+
+        ↓
+
+BƯỚC 5
+category-create.php
+    ↓
+chọn danh mục cha
+
+        ↓
+
+BƯỚC 6
+category-edit.php
+    ↓
+đổi danh mục cha
+
+        ↓
+
+BƯỚC 7
+category-delete.php
+    ↓
+kiểm tra danh mục con + sản phẩm
+
+        ↓
+
+BƯỚC 8
+WEBSITE NGƯỜI DÙNG
+    ↓
+SẢN PHẨM
+    ├── Cấp 1
+    ├── Cấp 2
+    └── Cấp 3

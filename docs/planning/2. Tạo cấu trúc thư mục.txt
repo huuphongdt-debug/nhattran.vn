@@ -1,0 +1,28 @@
+2. Tạo cấu trúc thư mục
+
+Trong VS Code tạo:
+
+NHATTRAN/
+│
+├── config/
+│   └── database.php
+│
+├── admin/
+│   └── index.php
+│
+├── public/
+│   ├── css/
+│   │   └── style.css
+│   │
+│   ├── js/
+│   │   └── script.js
+│   │
+│   └── images/
+│
+├── index.php
+│
+└── .htaccess
+
+Chưa cần viết nội dung các file.
+
+Mục tiêu của bước này là chúng ta xây nền móng sạch ngay từ đầu.

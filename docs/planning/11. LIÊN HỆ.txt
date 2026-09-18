@@ -1,0 +1,37 @@
+11. LIÊN HỆ
+
+Trang liên hệ:
+
+THÔNG TIN CÔNG TY
+
+Địa chỉ
+Điện thoại
+Email
+Zalo
+Facebook
+Website
+
+             │
+
+       FORM LIÊN HỆ
+
+Họ tên
+Số điện thoại
+Email
+Nội dung
+
+[ GỬI YÊU CẦU ]
+
+             │
+
+          GOOGLE MAP
+
+Các thông tin như:
+
+Số điện thoại
+Email
+Địa chỉ
+Zalo
+Facebook
+
+cũng nên quản lý từ Admin.

@@ -1,0 +1,34 @@
+8. Bảng posts
+
+Đây là hệ thống bài viết/tin tức.
+
+posts
+Trường	Kiểu
+id	INT
+title	VARCHAR(255)
+slug	VARCHAR(255)
+excerpt	TEXT
+content	LONGTEXT
+featured_image	VARCHAR(255)
+author_id	INT
+status	TINYINT
+published_at	DATETIME
+created_at	DATETIME
+updated_at	DATETIME
+
+Ví dụ:
+
+Tiêu đề:
+Nhật Trần hoàn thành dự án nâng cấp hệ thống điều khiển
+
+Ảnh:
+project01.jpg
+
+Nội dung:
+...
+
+Tác giả:
+Admin
+
+Ngày đăng:
+02/09/2026

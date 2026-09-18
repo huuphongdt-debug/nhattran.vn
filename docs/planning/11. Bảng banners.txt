@@ -1,0 +1,27 @@
+11. Bảng banners
+
+Quản lý banner trang chủ.
+
+banners
+Trường	Kiểu
+id	INT
+title	VARCHAR(255)
+subtitle	TEXT
+image	VARCHAR(255)
+button_text	VARCHAR(100)
+button_link	VARCHAR(255)
+status	TINYINT
+sort_order	INT
+created_at	DATETIME
+updated_at	DATETIME
+
+Nhờ vậy Admin có thể thay:
+
+Banner
+Ảnh
+Tiêu đề
+Mô tả
+Nút
+Link
+
+mà không sửa code.

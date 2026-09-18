@@ -1,0 +1,30 @@
+16. Một quyết định kỹ thuật rất quan trọng
+
+Tôi đề xuất không làm kiểu PHP mỗi trang một đống code lẫn HTML + SQL + xử lý dữ liệu.
+
+Thay vào đó, ngay từ đầu chúng ta tổ chức tương đối rõ:
+
+NHATTRAN-WEB/
+│
+├── admin/
+│
+├── config/
+│
+├── controllers/
+│
+├── models/
+│
+├── views/
+│
+├── includes/
+│
+├── assets/
+│
+├── uploads/
+│
+├── pages/
+│
+├── index.php
+└── .htaccess
+
+Nó sẽ hơi phức tạp hơn dự án HTML/CSS trước đây của bạn một chút, nhưng đổi lại sau này mở rộng rất dễ.

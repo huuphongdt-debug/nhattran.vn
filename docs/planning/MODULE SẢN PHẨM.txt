@@ -1,0 +1,75 @@
+1. Database sản phẩm
+        ↓
+2. Product Model
+        ↓
+3. ProductController
+        ↓
+4. Danh sách sản phẩm
+        ↓
+5. Thêm sản phẩm
+        ↓
+6. Sửa sản phẩm
+        ↓
+7. Xóa sản phẩm
+        ↓
+8. Upload hình ảnh
+        ↓
+9. Phân loại sản phẩm
+        ↓
+10. Hiển thị sản phẩm ngoài website
+
+
+
+products
+├── id
+├── category_id
+├── name
+├── slug
+├── sku
+├── description
+├── content
+├── price
+├── sale_price
+├── image
+├── status
+├── created_at
+└── updated_at
+
+
+Tôi đề xuất chúng ta KHÔNG tạo tất cả một lúc
+
+Để tránh hệ thống bị rối, chúng ta làm theo từng module.
+
+Giai đoạn 1 — Hoàn thiện Admin cơ bản
+users
+   ↓
+Đăng nhập
+   ↓
+Dashboard
+
+Phần này đã chạy ✅
+
+Giai đoạn 2 — Quản lý sản phẩm
+product_categories
+        ↓
+     products
+        ↓
+Admin:
+- Danh sách sản phẩm
+- Thêm sản phẩm
+- Sửa sản phẩm
+- Xóa sản phẩm
+- Draft / Active
+
+Đây nên là bước tiếp theo.
+
+Giai đoạn 3 — Dịch vụ
+services
+Giai đoạn 4 — Bài viết
+posts
+Giai đoạn 5 — Trang
+pages
+Giai đoạn 6 — Thư viện
+media
+Giai đoạn 7 — Cài đặt
+settings

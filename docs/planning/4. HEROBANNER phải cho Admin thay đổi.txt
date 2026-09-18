@@ -1,0 +1,48 @@
+4. HERO/BANNER phải cho Admin thay đổi
+
+Đây là một điểm tôi muốn làm khác website cũ.
+
+Không nên viết:
+
+<img src="banner1.jpg">
+
+rồi mỗi lần muốn đổi ảnh lại phải vào code.
+
+Thay vào đó:
+
+ADMIN
+  ↓
+Quản lý Banner
+  ↓
+Upload ảnh
+  ↓
+Nhập tiêu đề
+  ↓
+Nhập mô tả
+  ↓
+Nút liên kết
+  ↓
+Lưu
+
+Website tự lấy dữ liệu từ database.
+
+Ví dụ:
+
+Banner:
+------------------------------------------------
+Ảnh: automation.jpg
+
+Tiêu đề:
+GIẢI PHÁP TỰ ĐỘNG HÓA CÔNG NGHIỆP
+
+Mô tả:
+Cung cấp thiết bị và giải pháp...
+
+Nút:
+Xem sản phẩm
+
+Trạng thái:
+Hiển thị
+------------------------------------------------
+
+Sau này doanh nghiệp đổi banner không cần gọi bạn.

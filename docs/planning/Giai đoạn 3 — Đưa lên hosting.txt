@@ -1,0 +1,9 @@
+VS Code
+   ↓
+Test localhost
+   ↓
+Test trên hosting
+   ↓
+Backup WordPress cũ
+   ↓
+Chuyển website mới lên nhattran.vn

@@ -1,0 +1,16 @@
+                    WEBSITE NHAT TRAN
+                           │
+              ┌────────────┴────────────┐
+              │                         │
+          FRONTEND                    ADMIN
+              │                         │
+       Khách truy cập             admin/login.php
+                                        │
+                                        ↓
+                                AuthController
+                                        │
+                                        ↓
+                                    User.php
+                                        │
+                                        ↓
+                                  MySQL Database

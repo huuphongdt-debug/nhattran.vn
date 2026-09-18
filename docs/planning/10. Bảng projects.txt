@@ -1,0 +1,33 @@
+10. Bảng projects
+
+Đây là phần tôi muốn bổ sung để website mới chuyên nghiệp hơn.
+
+projects
+Trường	Kiểu
+id	INT
+name	VARCHAR(255)
+slug	VARCHAR(255)
+customer	VARCHAR(255)
+location	VARCHAR(255)
+short_description	TEXT
+description	LONGTEXT
+main_image	VARCHAR(255)
+status	TINYINT
+featured	TINYINT
+sort_order	INT
+created_at	DATETIME
+updated_at	DATETIME
+
+Ví dụ:
+
+Tên dự án:
+Nâng cấp hệ thống điều khiển máy CNC
+
+Khách hàng:
+ABC
+
+Địa điểm:
+Đà Nẵng
+
+Nội dung:
+...

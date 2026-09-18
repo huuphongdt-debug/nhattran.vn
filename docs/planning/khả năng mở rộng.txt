@@ -1,0 +1,31 @@
+15. Khả năng mở rộng sau này
+
+Đây chính là điểm tôi muốn chúng ta thiết kế ngay từ đầu.
+
+Hiện tại:
+
+WEBSITE GIỚI THIỆU
+       +
+SẢN PHẨM
+       +
+DỊCH VỤ
+       +
+BÀI VIẾT
+
+Sau này doanh nghiệp muốn bán hàng:
+
+                    NHATTRAN CMS
+                         │
+        ┌────────────────┼────────────────┐
+        ↓                ↓                ↓
+    WEBSITE           ADMIN           DATABASE
+                                         │
+                    ┌────────────────────┼──────────────┐
+                    ↓                    ↓              ↓
+                 Products             Orders         Customers
+                    │                    │              │
+                    └────────────────────┼──────────────┘
+                                         ↓
+                                    BÁN HÀNG
+
+Chúng ta không cần viết lại website từ đầu.

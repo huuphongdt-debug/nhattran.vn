@@ -1,0 +1,32 @@
+8. DỊCH VỤ
+
+Từ video tôi thấy website cũ đang có những nhóm dịch vụ như:
+
+Sửa chữa thiết bị điện công nghiệp
+Sửa chữa thiết bị gia công cơ khí
+Sửa chữa Servo
+Phục hồi PCB
+Các dịch vụ sửa chữa khác
+
+Ta xây thành hệ thống động.
+
+Ví dụ Admin:
+
+Dịch vụ
+ │
+ ├── Sửa chữa Servo
+ ├── Sửa chữa PLC
+ ├── Sửa chữa biến tần
+ ├── Phục hồi PCB
+ └── Dịch vụ khác
+
+Mỗi dịch vụ có:
+
+Tên dịch vụ
+Ảnh đại diện
+Mô tả ngắn
+Nội dung chi tiết
+Hình ảnh
+Video
+Trạng thái
+Thứ tự hiển thị

@@ -1,0 +1,32 @@
+7. Bảng services
+
+Dịch vụ của doanh nghiệp.
+
+services
+Trường	Kiểu
+id	INT
+name	VARCHAR(255)
+slug	VARCHAR(255)
+short_description	TEXT
+description	LONGTEXT
+image	VARCHAR(255)
+featured	TINYINT
+status	TINYINT
+sort_order	INT
+created_at	DATETIME
+updated_at	DATETIME
+
+Ví dụ:
+
+Sửa chữa Servo
+Phục hồi PCB
+Sửa chữa PLC
+Sửa chữa biến tần
+Lập trình PLC
+Thiết kế hệ thống tự động hóa
+
+Sau này doanh nghiệp thêm:
+
+Robot công nghiệp
+
+chỉ cần vào Admin → Dịch vụ → Thêm.

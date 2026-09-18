@@ -1,0 +1,30 @@
+17. Cấu trúc database sau khi hoàn thiện
+
+Vậy tôi đề xuất 12 bảng:
+
+nhattran_cms
+│
+├── users
+│
+├── categories
+│
+├── products
+├── product_categories
+├── product_images
+│
+├── services
+│
+├── posts
+├── post_categories
+│
+├── projects
+│
+├── banners
+│
+├── media
+│
+├── settings
+│
+└── contacts
+
+Đây là một CMS nhỏ nhưng đủ nền móng để phát triển lâu dài.

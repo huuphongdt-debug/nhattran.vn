@@ -1,0 +1,35 @@
+3. Bảng users
+
+Đây là tài khoản đăng nhập Admin.
+
+users
+Trường	Kiểu	Ý nghĩa
+id	INT	ID
+username	VARCHAR(100)	Tên đăng nhập
+password	VARCHAR(255)	Mật khẩu đã mã hóa
+full_name	VARCHAR(150)	Họ tên
+email	VARCHAR(150)	Email
+role	VARCHAR(30)	Quyền
+status	TINYINT	Trạng thái
+created_at	DATETIME	Ngày tạo
+updated_at	DATETIME	Ngày cập nhật
+
+Ví dụ:
+
+id: 1
+username: admin
+password: ********
+full_name: Quản trị viên
+role: admin
+status: 1
+Lưu ý cực kỳ quan trọng
+
+Mật khẩu không bao giờ lưu dạng chữ bình thường.
+
+PHP sẽ sử dụng:
+
+password_hash()
+
+và khi đăng nhập:
+
+password_verify()
