@@ -1,0 +1,173 @@
+:root {
+    /* Đổi màu, khoảng cách hoặc bo góc tại đây để áp dụng toàn trang. */
+    --manufacturer-form-text: #14213d;
+    --manufacturer-form-muted: #64748b;
+    --manufacturer-form-border: #cbd5e1;
+    --manufacturer-form-border-soft: #e5e7eb;
+    --manufacturer-form-surface: #ffffff;
+    --manufacturer-form-background: #f3f4f6;
+    --manufacturer-form-primary: #2563eb;
+    --manufacturer-form-primary-hover: #1d4ed8;
+    --manufacturer-form-danger: #b91c1c;
+    --manufacturer-form-danger-surface: #fee2e2;
+    --manufacturer-form-secondary: #e5e7eb;
+    --manufacturer-form-radius: 8px;
+}
+
+/* Chuẩn hóa kích thước để padding không làm tràn form. */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Nền tảng chung của trang sửa hãng. */
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 40px;
+    background: var(--manufacturer-form-background);
+    color: var(--manufacturer-form-text);
+    font-family: Arial, sans-serif;
+}
+
+/* Khung giới hạn chiều rộng nội dung. */
+.page {
+    width: min(850px, 100%);
+    margin: 0 auto;
+}
+
+/* Tiêu đề trang và nút quay lại. */
+.page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 28px;
+}
+
+.page-header h1 {
+    margin: 0;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+/* Kiểu nền tảng cho các nút. */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 11px 18px;
+    border: 0;
+    border-radius: 10px;
+    font: inherit;
+    font-size: 16px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn-back {
+    background: var(--manufacturer-form-secondary);
+    color: #111827;
+}
+
+.btn-back:hover {
+    background: #d1d5db;
+}
+
+.btn-primary {
+    background: var(--manufacturer-form-primary);
+    color: var(--manufacturer-form-surface);
+}
+
+.btn-primary:hover {
+    background: var(--manufacturer-form-primary-hover);
+}
+
+/* Khối chứa biểu mẫu chỉnh sửa. */
+.form-box {
+    padding: 30px;
+    border-radius: 14px;
+    background: var(--manufacturer-form-surface);
+    box-shadow: 0 8px 25px rgba(15, 23, 42, .08);
+}
+
+.form-group {
+    margin-bottom: 24px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 9px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* Kiểu chung cho các trường nhập liệu. */
+.form-group input {
+    width: 100%;
+    height: 48px;
+    padding: 0 14px;
+    border: 1px solid var(--manufacturer-form-border);
+    border-radius: var(--manufacturer-form-radius);
+    background: var(--manufacturer-form-surface);
+    color: var(--manufacturer-form-text);
+    font: inherit;
+    font-size: 16px;
+}
+
+.form-group input:focus {
+    outline: 3px solid rgba(37, 99, 235, .12);
+    border-color: var(--manufacturer-form-primary);
+}
+
+.help {
+    margin-top: 8px;
+    color: var(--manufacturer-form-muted);
+    font-size: 14px;
+}
+
+/* Thông báo lỗi khi dữ liệu không hợp lệ. */
+.error {
+    padding: 14px 16px;
+    margin-bottom: 22px;
+    border-radius: var(--manufacturer-form-radius);
+    background: var(--manufacturer-form-danger-surface);
+    color: var(--manufacturer-form-danger);
+    font-size: 15px;
+}
+
+/* Nhóm nút cuối form. */
+.form-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding-top: 20px;
+    border-top: 1px solid var(--manufacturer-form-border-soft);
+}
+
+/* Điều chỉnh bố cục cho màn hình nhỏ. */
+@media (max-width: 768px) {
+    body {
+        padding: 20px;
+    }
+
+    .page-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .form-box {
+        padding: 20px;
+    }
+
+    .form-footer,
+    .form-footer .btn {
+        width: 100%;
+    }
+
+    .form-footer {
+        flex-direction: column;
+    }
+}

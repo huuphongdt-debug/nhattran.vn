@@ -1,0 +1,377 @@
+/*
+ * DASHBOARD.CSS
+ * Chỉ chứa giao diện nội dung dashboard.
+ * Navigation và khung Admin dùng layout.css, component dùng components.css.
+ */
+
+:root {
+    /* Đổi màu, khoảng cách hoặc bo góc tại đây để áp dụng toàn dashboard. */
+    --dashboard-text: #17243b;
+    --dashboard-heading: #1b314f;
+    --dashboard-muted: #69788e;
+    --dashboard-border: #e3e9f2;
+    --dashboard-divider: #edf0f6;
+    --dashboard-surface: #ffffff;
+    --dashboard-surface-muted: #f8fafc;
+    --dashboard-primary: #2563eb;
+    --dashboard-primary-hover: #84afff;
+    --dashboard-success: #238358;
+    --dashboard-success-surface: #e9f8f0;
+    --dashboard-warning: #946721;
+    --dashboard-warning-surface: #fff4dc;
+    --dashboard-radius: 12px;
+    --dashboard-gap: 22px;
+}
+
+/* Khung dashboard chính. */
+.dash-main {
+    max-width: 1600px;
+}
+
+/* Tiêu đề dashboard và ngày hiện tại. */
+.dash-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.dash-heading h1 {
+    margin: 4px 0 10px;
+    font-size: 30px;
+}
+
+.dash-heading p {
+    margin: 0;
+    color: #718096;
+    font-size: 14px;
+}
+
+.dash-heading .dash-eyebrow {
+    color: var(--dashboard-primary);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .15em;
+}
+
+.dash-heading time {
+    padding: 9px 14px;
+    border: 1px solid var(--dashboard-border);
+    border-radius: var(--dashboard-radius);
+    background: var(--dashboard-surface);
+    color: #617088;
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+/* Các ô thống kê nội dung. Khoảng cách dưới đây tách ô với panel bên dưới. */
+.dash-stats {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+    margin-bottom: 22px;
+}
+
+.dash-stat {
+    display: block;
+    padding: 22px;
+    border: 1px solid var(--dashboard-border);
+    border-radius: var(--dashboard-radius);
+    background: var(--dashboard-surface);
+    color: var(--dashboard-text);
+    text-decoration: none;
+    transition: border-color .15s;
+}
+
+.dash-stat:hover {
+    border-color: var(--dashboard-primary-hover);
+}
+
+.dash-stat-top,
+.dash-stat-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.dash-stat-top {
+    color: var(--dashboard-muted);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.dash-stat-top > span {
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 9px;
+    background: #edf3ff;
+    color: var(--dashboard-primary);
+    font-size: 22px;
+}
+
+.dash-stat > strong {
+    display: block;
+    margin: 5px 0 18px;
+    font-size: 34px;
+    line-height: 1.2;
+}
+
+.dash-stat-bottom {
+    padding-top: 13px;
+    border-top: 1px solid #eff2f6;
+    color: #567496;
+    font-size: 11px;
+}
+
+/* Hai cột nội dung bên dưới hàng thống kê. */
+.dash-columns {
+    display: grid;
+    grid-template-columns: minmax(0, 1.8fr) minmax(280px, 1fr);
+    gap: var(--dashboard-gap);
+    margin-top: 0;
+    padding-top: var(--dashboard-gap);
+}
+
+.dash-stack {
+    display: grid;
+    align-content: start;
+    gap: var(--dashboard-gap);
+    min-width: 0;
+}
+
+/* Panel sản phẩm, trạng thái và các nội dung dashboard. */
+.dash-panel {
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid var(--dashboard-border);
+    border-radius: var(--dashboard-radius);
+    background: var(--dashboard-surface);
+}
+
+.dash-panel-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 20px 22px;
+    border-bottom: 1px solid var(--dashboard-divider);
+}
+
+.dash-panel-heading h2 {
+    margin: 0;
+    color: var(--dashboard-heading);
+    font-size: 16px;
+}
+
+.dash-panel-heading a,
+.dash-panel-heading > span {
+    color: #5c79a0;
+    font-size: 11px;
+    text-decoration: none;
+}
+
+.dash-table {
+    overflow-x: auto;
+}
+
+.dash-table table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 13px;
+}
+
+.dash-table th {
+    padding: 12px 20px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.dash-table td {
+    padding: 16px 20px;
+    border-top: 1px solid var(--dashboard-divider);
+}
+
+.dash-table td strong,
+.dash-table td small {
+    display: block;
+}
+
+.dash-table td strong {
+    min-width: 160px;
+    font-size: 13px;
+}
+
+.dash-table td small {
+    margin-top: 3px;
+    color: #8a97a9;
+    font-size: 11px;
+}
+
+.dash-table td a {
+    color: var(--dashboard-primary);
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.dash-status {
+    display: inline-block;
+    padding: 4px 9px;
+    border-radius: 5px;
+    background: #f2f4f8;
+    color: #67758b;
+    font-size: 10px;
+    white-space: nowrap;
+}
+
+.dash-status.is-active {
+    background: var(--dashboard-success-surface);
+    color: var(--dashboard-success);
+}
+
+.dash-empty {
+    color: #7c899a;
+    text-align: center;
+}
+
+/* Các lối tắt quản trị. */
+.dash-actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    padding: 20px;
+}
+
+.dash-actions a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px;
+    border: 1px solid #e5eaf2;
+    border-radius: 9px;
+    color: #263e5e;
+    text-decoration: none;
+}
+
+.dash-actions a:hover {
+    border-color: #bad0f5;
+    background: #f8faff;
+}
+
+.dash-actions a > span:last-child {
+    margin-left: auto;
+    color: #8596ad;
+}
+
+.dash-action-icon {
+    color: var(--dashboard-primary);
+    font-size: 24px;
+}
+
+.dash-actions strong {
+    display: block;
+    font-size: 12px;
+}
+
+.dash-actions small {
+    display: block;
+    margin-top: 4px;
+    color: #8390a3;
+    font-size: 10px;
+}
+
+/* Danh sách nội dung cần xem lại. */
+.dash-review {
+    padding: 6px 22px;
+}
+
+.dash-review a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px 0;
+    border-bottom: 1px solid #f0f3f7;
+    color: #576a84;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.dash-review strong {
+    margin-left: auto;
+    padding: 2px 9px;
+    border-radius: 5px;
+    background: var(--dashboard-warning-surface);
+    color: var(--dashboard-warning);
+}
+
+.dash-note {
+    margin: 12px 22px 20px;
+    color: #8c99aa;
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+.dash-product-status > div:not(.dash-panel-heading) {
+    display: flex;
+    justify-content: space-between;
+    padding: 13px 22px;
+    color: #697c95;
+    font-size: 12px;
+}
+
+.dash-product-status > div:last-child {
+    padding-bottom: 22px;
+}
+
+.dash-footer {
+    margin: 26px 0 0;
+    color: #98a2b2;
+    font-size: 11px;
+}
+
+.dash-alert {
+    padding: 15px;
+    border-radius: var(--dashboard-radius);
+    background: #fff1dc;
+    color: #7c521b;
+}
+
+.dash-visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+}
+
+/* Tablet: chuyển nội dung chính thành một cột. */
+@media (max-width: 1200px) {
+    .dash-columns {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Mobile: thu gọn ô thống kê và lối tắt. */
+@media (max-width: 700px) {
+    .dash-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .dash-actions {
+        grid-template-columns: 1fr;
+    }
+
+    .dash-heading time {
+        display: none;
+    }
+
+    .dash-stat {
+        padding: 16px;
+    }
+}

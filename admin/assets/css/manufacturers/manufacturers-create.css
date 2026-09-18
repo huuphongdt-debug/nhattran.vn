@@ -1,0 +1,219 @@
+:root {
+    /* Đổi màu, khoảng cách hoặc bo góc tại đây để áp dụng toàn trang. */
+    --manufacturer-form-text: #172033;
+    --manufacturer-form-muted: #6b7280;
+    --manufacturer-form-border: #d1d5db;
+    --manufacturer-form-border-soft: #e5e7eb;
+    --manufacturer-form-surface: #ffffff;
+    --manufacturer-form-background: #f3f4f6;
+    --manufacturer-form-primary: #2563eb;
+    --manufacturer-form-primary-hover: #1d4ed8;
+    --manufacturer-form-danger: #b91c1c;
+    --manufacturer-form-danger-surface: #fee2e2;
+    --manufacturer-form-danger-border: #fecaca;
+    --manufacturer-form-secondary: #e5e7eb;
+    --manufacturer-form-radius: 8px;
+}
+
+/* Chuẩn hóa kích thước để padding không làm tràn form. */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Nền tảng chung của trang tạo hãng. */
+body {
+    min-height: 100vh;
+    margin: 0;
+    background: var(--manufacturer-form-background);
+    color: var(--manufacturer-form-text);
+    font-family: Arial, sans-serif;
+}
+
+/* Thanh đầu trang và thông tin quản trị viên. */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    height: 76px;
+    padding: 0 40px;
+    border-bottom: 1px solid var(--manufacturer-form-border-soft);
+    background: var(--manufacturer-form-surface);
+}
+
+.logo {
+    color: var(--manufacturer-form-text);
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.admin-info {
+    color: #111827;
+    font-size: 16px;
+}
+
+/* Khung giới hạn chiều rộng nội dung. */
+.container {
+    width: min(1000px, calc(100% - 40px));
+    margin: 0 auto;
+    padding: 50px 30px;
+}
+
+/* Tiêu đề trang và nút quay lại. */
+.page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 30px;
+}
+
+.page-header h1 {
+    margin: 0;
+    color: var(--manufacturer-form-text);
+    font-size: 32px;
+}
+
+/* Kiểu nền tảng cho các nút. */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 13px 20px;
+    border: 0;
+    border-radius: var(--manufacturer-form-radius);
+    font: inherit;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn-back {
+    background: var(--manufacturer-form-secondary);
+    color: #111827;
+}
+
+.btn-back:hover {
+    background: #d1d5db;
+}
+
+.btn-primary {
+    background: var(--manufacturer-form-primary);
+    color: var(--manufacturer-form-surface);
+}
+
+.btn-primary:hover {
+    background: var(--manufacturer-form-primary-hover);
+}
+
+/* Khối chứa biểu mẫu. */
+.form-box {
+    padding: 35px;
+    border-radius: 12px;
+    background: var(--manufacturer-form-surface);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, .05);
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--manufacturer-form-text);
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* Kiểu chung cho các trường nhập liệu của form. */
+.form-group input {
+    width: 100%;
+    height: 52px;
+    padding: 0 15px;
+    border: 1px solid var(--manufacturer-form-border);
+    border-radius: var(--manufacturer-form-radius);
+    background: var(--manufacturer-form-surface);
+    color: var(--manufacturer-form-text);
+    font: inherit;
+    font-size: 16px;
+}
+
+.form-group input:focus {
+    outline: 3px solid rgba(37, 99, 235, .12);
+    border-color: var(--manufacturer-form-primary);
+}
+
+.help-text {
+    margin-top: 8px;
+    color: var(--manufacturer-form-muted);
+    font-size: 14px;
+}
+
+/* Thông báo lỗi khi dữ liệu không hợp lệ. */
+.alert-error {
+    padding: 14px 16px;
+    margin-bottom: 25px;
+    border: 1px solid var(--manufacturer-form-danger-border);
+    border-radius: var(--manufacturer-form-radius);
+    background: var(--manufacturer-form-danger-surface);
+    color: var(--manufacturer-form-danger);
+    font-size: 15px;
+}
+
+/* Nhóm nút lưu và quay lại. */
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding-top: 10px;
+    border-top: 1px solid var(--manufacturer-form-border-soft);
+}
+
+/* Điều chỉnh bố cục cho màn hình nhỏ. */
+@media (max-width: 768px) {
+    .header {
+        height: 64px;
+        padding: 0 20px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .admin-info {
+        display: none;
+    }
+
+    .container {
+        width: min(100% - 28px, 1000px);
+        padding: 30px 0;
+    }
+
+    .page-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .page-header h1 {
+        font-size: 25px;
+    }
+
+    .form-box {
+        padding: 22px;
+    }
+
+    .form-actions,
+    .form-actions .btn {
+        width: 100%;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+}

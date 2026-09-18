@@ -1,0 +1,130 @@
+:root {
+	/* Tập trung các màu và kích thước dùng chung của màn hình nhóm hãng. */
+	--manufacturer-text: #172033;
+	--manufacturer-muted: #64748b;
+	--manufacturer-border: #e2e8f0;
+	--manufacturer-surface: #ffffff;
+	--manufacturer-primary: #1d4ed8;
+	--manufacturer-primary-soft: #eff6ff;
+	--manufacturer-radius: 10px;
+}
+
+/* Khối chọn hãng và mô tả nhóm. */
+.manufacturer-group-fields {
+	margin: 24px 0;
+	padding: 20px;
+	border: 1px solid var(--manufacturer-border);
+	border-radius: var(--manufacturer-radius);
+}
+
+.manufacturer-group-fields legend {
+	font-weight: 600;
+}
+
+.manufacturer-group-fields p,
+.manufacturer-groups-layout p {
+	color: var(--manufacturer-muted);
+	font-size: 14px;
+}
+
+/* Các lựa chọn checkbox dạng hàng ngang. */
+.manufacturer-group-options {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 16px;
+	margin: 15px 0;
+}
+
+.manufacturer-group-options label,
+.manufacturer-member-list label {
+	display: flex;
+	align-items: center;
+	gap: 9px;
+}
+
+.manufacturer-group-options input[type="checkbox"],
+.manufacturer-member-list input[type="checkbox"] {
+	width: 18px;
+	height: 18px;
+	flex: 0 0 18px;
+	margin: 0;
+	accent-color: #2563eb;
+}
+
+/* Tag liên kết các hãng thuộc nhóm. */
+.manufacturer-group-tags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px;
+	margin-top: 8px;
+}
+
+.manufacturer-group-tags a {
+	padding: 3px 8px;
+	border-radius: 5px;
+	background: var(--manufacturer-primary-soft);
+	color: var(--manufacturer-primary);
+	font-size: 12px;
+	text-decoration: none;
+}
+
+/* Hai cột: form bên trái, danh sách nhóm bên phải. */
+.manufacturer-groups-layout {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 24px;
+}
+
+.manufacturer-groups-layout input[name="name"] {
+	width: 100%;
+	margin-top: 8px;
+}
+
+/* Danh sách hãng có vùng cuộn riêng khi có nhiều mục. */
+.manufacturer-member-list {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 12px;
+	max-height: 350px;
+	margin: 20px 0;
+	overflow-y: auto;
+}
+
+/* Một dòng trong danh sách nhóm đã tạo. */
+.manufacturer-group-row {
+	padding: 18px 0;
+	border-bottom: 1px solid var(--manufacturer-border);
+}
+
+.manufacturer-group-row small {
+	display: block;
+	margin: 6px 0 12px;
+	color: var(--manufacturer-muted);
+}
+
+.manufacturer-group-row a {
+	color: #1e40af;
+	text-decoration: none;
+}
+
+.manufacturer-group-filter {
+	min-width: 230px;
+}
+
+.manufacturer-group-row .actions {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.manufacturer-group-row form {
+	margin: 0;
+}
+
+/* Trên màn hình nhỏ, chuyển hai cột thành một cột. */
+@media (max-width: 800px) {
+	.manufacturer-groups-layout,
+	.manufacturer-member-list {
+		grid-template-columns: 1fr;
+	}
+}

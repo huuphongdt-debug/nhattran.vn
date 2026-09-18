@@ -1,0 +1,249 @@
+:root {
+    /* Đổi màu, khoảng cách hoặc bo góc tại đây để áp dụng toàn trang. */
+    --post-form-text: #172033;
+    --post-form-label: #374151;
+    --post-form-muted: #6b7280;
+    --post-form-hint: #9ca3af;
+    --post-form-border: #d1d5db;
+    --post-form-border-soft: #e5e7eb;
+    --post-form-surface: #ffffff;
+    --post-form-background: #f3f4f6;
+    --post-form-primary: #2563eb;
+    --post-form-primary-hover: #1d4ed8;
+    --post-form-danger: #991b1b;
+    --post-form-danger-surface: #fee2e2;
+    --post-form-secondary: #f3f4f6;
+    --post-form-radius: 8px;
+}
+
+/* Chuẩn hóa kích thước để padding không làm tràn form. */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Nền tảng chung của trang sửa bài viết. */
+body {
+    background: var(--post-form-background);
+    color: var(--post-form-text);
+    font-family: Arial, sans-serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Thanh đầu trang và thông tin quản trị viên. */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    height: 76px;
+    padding: 0 40px;
+    border-bottom: 1px solid var(--post-form-border-soft);
+    background: var(--post-form-surface);
+}
+
+.logo {
+    color: var(--post-form-text);
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.admin-info {
+    color: #111827;
+    font-size: 18px;
+}
+
+.admin-info strong {
+    margin-left: 5px;
+}
+
+/* Khung giới hạn chiều rộng nội dung. */
+.container {
+    width: min(1000px, calc(100% - 40px));
+    margin: 0 auto;
+    padding: 30px 0;
+}
+
+/* Tiêu đề trang và mô tả ngắn. */
+.page-header {
+    margin-bottom: 25px;
+}
+
+.page-header h1 {
+    margin-bottom: 7px;
+    font-size: 28px;
+}
+
+.page-header p {
+    color: var(--post-form-muted);
+    font-size: 14px;
+}
+
+/* Khối chứa biểu mẫu. */
+.form-card {
+    padding: 25px;
+    border: 1px solid var(--post-form-border-soft);
+    border-radius: 12px;
+    background: var(--post-form-surface);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 7px;
+    color: var(--post-form-label);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.required {
+    color: #dc2626;
+}
+
+/* Kiểu chung cho các trường nhập liệu. */
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 11px 12px;
+    border: 1px solid var(--post-form-border);
+    border-radius: var(--post-form-radius);
+    background: var(--post-form-surface);
+    color: var(--post-form-text);
+    font: inherit;
+    font-size: 13px;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: 3px solid rgba(37, 99, 235, .1);
+    border-color: var(--post-form-primary);
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+    line-height: 1.6;
+}
+
+.content-textarea {
+    min-height: 300px;
+}
+
+.hint {
+    margin-top: 5px;
+    color: var(--post-form-hint);
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+/* Nhóm trường đặt cạnh nhau trên màn hình lớn. */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+/* Thông báo lỗi khi dữ liệu không hợp lệ. */
+.alert {
+    padding: 13px 16px;
+    margin-bottom: 20px;
+    border-radius: var(--post-form-radius);
+    background: var(--post-form-danger-surface);
+    color: var(--post-form-danger);
+    font-size: 13px;
+}
+
+/* Nhóm nút cuối form. */
+.form-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid var(--post-form-border-soft);
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 11px 17px;
+    border: 0;
+    border-radius: var(--post-form-radius);
+    font: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: var(--post-form-primary);
+    color: var(--post-form-surface);
+}
+
+.btn-primary:hover {
+    background: var(--post-form-primary-hover);
+}
+
+.btn-secondary {
+    background: var(--post-form-secondary);
+    color: var(--post-form-label);
+}
+
+.btn-secondary:hover {
+    background: var(--post-form-border-soft);
+}
+
+/* Điều chỉnh form cho màn hình nhỏ. */
+@media (max-width: 768px) {
+    .header {
+        height: 64px;
+        padding: 0 20px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .admin-info {
+        display: none;
+    }
+
+    .container {
+        width: calc(100% - 30px);
+        padding: 22px 0;
+    }
+
+    .form-card {
+        padding: 18px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .form-actions,
+    .form-actions .btn {
+        width: 100%;
+    }
+
+    .form-actions {
+        align-items: stretch;
+        flex-direction: column-reverse;
+    }
+}

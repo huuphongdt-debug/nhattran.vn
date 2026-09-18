@@ -1,0 +1,261 @@
+/*
+ * Giao diện đăng nhập quản trị — được nạp bởi admin/login.php.
+ * File này chỉ định dạng giao diện; xử lý đăng nhập nằm trong PHP.
+ *
+ * Thứ tự: reset → bố cục trang → khung đăng nhập → tiêu đề → thông báo lỗi
+ *          → biểu mẫu → nút đăng nhập → điều chỉnh trên màn hình nhỏ.
+ * Các selector *, body, .error và .form-group có phạm vi rộng:
+ * chỉ nạp file cho trang đăng nhập để tránh ảnh hưởng các trang quản trị khác.
+ * Giữ phần @media cuối file để các giá trị mobile ghi đè đúng thứ tự.
+ */
+
+/* Reset khoảng cách mặc định; border-box tính cả padding và viền vào kích thước. */
+* {
+
+            box-sizing: border-box;
+
+            margin: 0;
+
+            padding: 0;
+        }
+
+
+        /* Căn giữa khung đăng nhập theo hai chiều, chiều cao tối thiểu bằng viewport.
+           Bộ font hệ thống được khai báo trực tiếp, không cần tải font bên ngoài. */
+        body {
+
+            min-height: 100vh;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            padding: 20px;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            background: #f3f4f6;
+
+            color: #172033;
+        }
+
+
+        /* =========================
+           LOGIN BOX
+           Khung rộng tối đa 420px; width: 100% giúp co theo vùng chứa.
+        ========================= */
+
+        .login-box {
+
+            width: 100%;
+
+            max-width: 420px;
+
+            background: #ffffff;
+
+            padding: 40px;
+
+            border-radius: 14px;
+
+            box-shadow:
+                0 10px 35px rgba(0, 0, 0, 0.08);
+        }
+
+
+        /* =========================
+           TITLE
+           .login-title bọc tiêu đề h1 và dòng mô tả p bên dưới.
+        ========================= */
+
+        .login-title {
+
+            text-align: center;
+
+            margin-bottom: 30px;
+        }
+
+
+        .login-title h1 {
+
+            margin-bottom: 8px;
+
+            font-size: 30px;
+
+            font-weight: 700;
+
+            color: #172033;
+        }
+
+
+        .login-title p {
+
+            color: #6b7280;
+
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           ERROR
+           Định dạng thông báo lỗi do PHP xuất ra; CSS không quyết định khi nào hiện lỗi.
+        ========================= */
+
+        .error {
+
+            margin-bottom: 20px;
+
+            padding: 12px 14px;
+
+            border-radius: 8px;
+
+            background: #fee2e2;
+
+            color: #b91c1c;
+
+            font-size: 14px;
+
+            line-height: 1.5;
+        }
+
+
+        /* =========================
+           FORM
+           Mỗi .form-group chứa nhãn và ô nhập; khoảng cách giữa các trường đặt ở đây.
+        ========================= */
+
+        .form-group {
+
+            margin-bottom: 20px;
+        }
+
+
+        .form-group label {
+
+            display: block;
+
+            margin-bottom: 8px;
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            color: #374151;
+        }
+
+
+        .form-group input {
+
+            width: 100%;
+
+            padding: 13px 14px;
+
+            border: 1px solid #d1d5db;
+
+            border-radius: 8px;
+
+            outline: none;
+
+            font-size: 15px;
+
+            color: #111827;
+
+            background: #ffffff;
+
+            transition:
+                border-color 0.2s ease,
+                box-shadow 0.2s ease;
+        }
+
+
+        /* Viền xanh và bóng bao quanh thay cho outline mặc định khi ô nhập nhận focus.
+           Giữ dấu hiệu focus để người dùng bàn phím nhận biết trường đang chọn. */
+        .form-group input:focus {
+
+            border-color: #2563eb;
+
+            box-shadow:
+                0 0 0 3px rgba(37, 99, 235, 0.10);
+        }
+
+
+        .form-group input::placeholder {
+
+            color: #9ca3af;
+        }
+
+
+        /* =========================
+           LOGIN BUTTON
+           Nút chiếm toàn bộ chiều rộng; hover đổi nền, active dịch xuống 1px khi nhấn.
+        ========================= */
+
+        .btn-login {
+
+            width: 100%;
+
+            padding: 13px 16px;
+
+            border: none;
+
+            border-radius: 8px;
+
+            background: #2563eb;
+
+            color: #ffffff;
+
+            font-size: 15px;
+
+            font-weight: 600;
+
+            cursor: pointer;
+
+            transition:
+                background 0.2s ease,
+                transform 0.1s ease;
+        }
+
+
+        .btn-login:hover {
+
+            background: #1d4ed8;
+        }
+
+
+        .btn-login:active {
+
+            transform: translateY(1px);
+        }
+
+
+        /* =========================
+           MOBILE
+           Áp dụng khi viewport rộng tối đa 480px (bao gồm 480px).
+           Chỉ giảm khoảng đệm, bo góc khung và cỡ tiêu đề; các thuộc tính khác kế thừa ở trên.
+        ========================= */
+
+        @media (max-width: 480px) {
+
+            body {
+
+                padding: 15px;
+            }
+
+
+            .login-box {
+
+                padding: 30px 22px;
+
+                border-radius: 12px;
+            }
+
+
+            .login-title h1 {
+
+                font-size: 26px;
+            }
+        }

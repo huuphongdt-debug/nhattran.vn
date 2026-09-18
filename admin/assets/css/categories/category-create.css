@@ -1,0 +1,161 @@
+body {
+            font-family: Arial, sans-serif;
+            background: #f3f4f6;
+            margin: 0;
+            padding: 40px;
+        }
+        :root {
+            /* Đổi màu, khoảng cách hoặc bo góc tại đây để áp dụng toàn trang. */
+            --category-form-text: #172033;
+            --category-form-muted: #6b7280;
+            --category-form-border: #d1d5db;
+            --category-form-surface: #ffffff;
+            --category-form-background: #f3f4f6;
+            --category-form-primary: #2563eb;
+            --category-form-primary-hover: #1d4ed8;
+            --category-form-danger: #b91c1c;
+            --category-form-danger-surface: #fee2e2;
+            --category-form-secondary: #e5e7eb;
+            --category-form-radius: 8px;
+        }
+
+        /* Chuẩn hóa kích thước để padding không làm tràn form. */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        /* Khung giới hạn chiều rộng nội dung. */
+        .container {
+            width: min(800px, 100%);
+            margin: 0 auto;
+        }
+
+        /* Tiêu đề trang và nút quay lại. */
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            margin: 0;
+            color: var(--category-form-text);
+        }
+
+        /* Khối chứa biểu mẫu. */
+        .box {
+            padding: 30px;
+            border-radius: 12px;
+            background: var(--category-form-surface);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, .05);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        /* Kiểu chung cho input, textarea và select. */
+        input,
+        textarea,
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--category-form-border);
+            border-radius: var(--category-form-radius);
+            background: var(--category-form-surface);
+            color: var(--category-form-text);
+            font: inherit;
+            font-size: 15px;
+        }
+
+        input:focus,
+        textarea:focus,
+        select:focus {
+            outline: 3px solid rgba(37, 99, 235, .15);
+            border-color: var(--category-form-primary);
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        /* Nhóm nút lưu và quay lại. */
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 25px;
+        }
+
+        button,
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 42px;
+            padding: 12px 20px;
+            border: 0;
+            border-radius: var(--category-form-radius);
+            font: inherit;
+            font-size: 15px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .btn-save {
+            background: var(--category-form-primary);
+            color: var(--category-form-surface);
+        }
+
+        .btn-save:hover {
+            background: var(--category-form-primary-hover);
+        }
+
+        .btn-back {
+            background: var(--category-form-secondary);
+            color: var(--category-form-text);
+        }
+
+        /* Thông báo lỗi khi dữ liệu không hợp lệ. */
+        .error {
+            padding: 12px;
+            margin-bottom: 20px;
+            border-radius: var(--category-form-radius);
+            background: var(--category-form-danger-surface);
+            color: var(--category-form-danger);
+        }
+
+        /* Điều chỉnh form cho màn hình nhỏ. */
+        @media (max-width: 700px) {
+            body {
+                padding: 20px 14px;
+            }
+
+            .header {
+                align-items: flex-start;
+                flex-direction: column;
+                margin-bottom: 20px;
+            }
+
+            .box {
+                padding: 20px;
+            }
+
+            .buttons,
+            .buttons .btn,
+            .buttons button {
+                width: 100%;
+            }
+        }
+

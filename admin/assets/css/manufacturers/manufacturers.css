@@ -1,0 +1,358 @@
+:root {
+    /* Tập trung màu sắc, kích thước và bo góc để dễ bảo trì. */
+    --manufacturer-text: #172033;
+    --manufacturer-muted: #64748b;
+    --manufacturer-border: #e2e8f0;
+    --manufacturer-input-border: #cbd5e1;
+    --manufacturer-surface: #ffffff;
+    --manufacturer-surface-muted: #f8fafc;
+    --manufacturer-background: #f3f4f6;
+    --manufacturer-primary: #2563eb;
+    --manufacturer-primary-hover: #1d4ed8;
+    --manufacturer-danger: #b91c1c;
+    --manufacturer-danger-surface: #fee2e2;
+    --manufacturer-radius: 10px;
+    --manufacturer-card-radius: 16px;
+}
+
+/* Chuẩn hóa kích thước cho toàn bộ phần tử. */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Nền tảng chung của trang danh sách hãng. */
+body {
+    min-height: 100vh;
+    background: var(--manufacturer-background);
+    color: var(--manufacturer-text);
+    font-family: Arial, sans-serif;
+}
+
+/* Thanh đầu trang và thông tin quản trị viên. */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    height: 64px;
+    padding: 0 32px;
+    border-bottom: 1px solid var(--manufacturer-border);
+    background: var(--manufacturer-surface);
+}
+
+.logo {
+    color: var(--manufacturer-text);
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.admin-info {
+    color: var(--manufacturer-muted);
+    font-size: 14px;
+}
+
+.admin-info strong {
+    color: var(--manufacturer-text);
+}
+
+/* Khung nội dung chính. */
+.container {
+    width: min(1500px, 100%);
+    margin: 0 auto;
+    padding: 40px 32px;
+}
+
+/* Tiêu đề trang và nhóm điều hướng. */
+.page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.page-header h1 {
+    color: var(--manufacturer-text);
+    font-size: 36px;
+    font-weight: 800;
+}
+
+.page-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+/* Kiểu nền tảng cho mọi nút. */
+.btn,
+.action-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 0 16px;
+    border: 0;
+    border-radius: var(--manufacturer-radius);
+    font: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn-dashboard {
+    background: #e5e7eb;
+    color: var(--manufacturer-text);
+}
+
+.btn-dashboard:hover {
+    background: #d1d5db;
+}
+
+.btn-primary {
+    background: var(--manufacturer-primary);
+    color: var(--manufacturer-surface);
+}
+
+.btn-primary:hover {
+    background: var(--manufacturer-primary-hover);
+}
+
+.btn-edit {
+    background: #eff6ff;
+    color: var(--manufacturer-primary);
+}
+
+.btn-delete {
+    background: var(--manufacturer-danger-surface);
+    color: var(--manufacturer-danger);
+}
+
+/* Thông báo lỗi hoặc kết quả thao tác. */
+.error {
+    padding: 14px 18px;
+    margin-bottom: 20px;
+    border: 1px solid #fecaca;
+    border-radius: var(--manufacturer-radius);
+    background: var(--manufacturer-danger-surface);
+    color: var(--manufacturer-danger);
+}
+
+/* Bộ lọc tìm kiếm và lọc theo nhóm. */
+.filter-box {
+    padding: 24px;
+    margin-bottom: 24px;
+    border: 1px solid var(--manufacturer-border);
+    border-radius: var(--manufacturer-card-radius);
+    background: var(--manufacturer-surface);
+}
+
+.filter-form {
+    display: flex;
+    align-items: flex-end;
+    gap: 14px;
+}
+
+.filter-group {
+    flex: 1;
+}
+
+.filter-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.filter-input {
+    width: 100%;
+    height: 52px;
+    padding: 0 16px;
+    border: 1px solid var(--manufacturer-input-border);
+    border-radius: var(--manufacturer-radius);
+    background: var(--manufacturer-surface);
+    color: var(--manufacturer-text);
+    font: inherit;
+    font-size: 16px;
+}
+
+.filter-input:focus {
+    outline: 3px solid rgba(37, 99, 235, .1);
+    border-color: var(--manufacturer-primary);
+}
+
+/* Khối danh sách và bảng hãng. */
+.table-box {
+    overflow: hidden;
+    border: 1px solid var(--manufacturer-border);
+    border-radius: var(--manufacturer-card-radius);
+    background: var(--manufacturer-surface);
+}
+
+.table-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--manufacturer-border);
+}
+
+.table-header h2 {
+    font-size: 18px;
+}
+
+.table-header span {
+    color: var(--manufacturer-muted);
+    font-size: 14px;
+}
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--manufacturer-border);
+    background: var(--manufacturer-surface-muted);
+    color: #334155;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: left;
+    white-space: nowrap;
+}
+
+td {
+    padding: 18px 20px;
+    border-bottom: 1px solid var(--manufacturer-border);
+    font-size: 15px;
+    vertical-align: middle;
+}
+
+tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+tbody tr:hover td {
+    background: var(--manufacturer-surface-muted);
+}
+
+/* Tên, logo, slug và số sản phẩm của từng hãng. */
+.manufacturer-name {
+    color: var(--manufacturer-text);
+    font-weight: 700;
+}
+
+.manufacturer-logo {
+    display: block;
+    width: 90px;
+    height: 44px;
+    object-fit: contain;
+}
+
+.slug {
+    color: var(--manufacturer-muted);
+    font-family: monospace;
+}
+
+.product-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 38px;
+    height: 32px;
+    padding: 0 10px;
+    border-radius: 20px;
+    background: #eff6ff;
+    color: var(--manufacturer-primary);
+    font-weight: 700;
+}
+
+.actions {
+    display: flex;
+    gap: 8px;
+}
+
+.action-btn {
+    min-height: 38px;
+    padding: 0 14px;
+}
+
+/* Trạng thái chưa có dữ liệu. */
+.empty {
+    padding: 80px 20px;
+    color: var(--manufacturer-muted);
+    text-align: center;
+}
+
+.empty-icon {
+    margin-bottom: 16px;
+    font-size: 48px;
+}
+
+.empty h3 {
+    margin-bottom: 8px;
+    color: var(--manufacturer-text);
+}
+
+/* Điều chỉnh bố cục trên màn hình nhỏ. */
+@media (max-width: 768px) {
+    .header {
+        height: 70px;
+        padding: 0 16px;
+    }
+
+    .admin-info {
+        display: none;
+    }
+
+    .container {
+        padding: 25px 15px;
+    }
+
+    .page-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .page-header h1 {
+        font-size: 28px;
+    }
+
+    .page-actions,
+    .page-actions .btn {
+        width: 100%;
+    }
+
+    .page-actions .btn {
+        flex: 1;
+    }
+
+    .filter-box {
+        padding: 16px;
+        border-radius: 12px;
+    }
+
+    .filter-form {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .filter-form .btn {
+        width: 100%;
+    }
+
+    .table-box {
+        border-radius: 12px;
+    }
+}

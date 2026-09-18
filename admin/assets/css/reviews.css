@@ -1,0 +1,3 @@
+.review-card h2 { font-size: 18px; margin: 0 0 10px; }
+.review-text { white-space: pre-wrap; overflow-wrap: anywhere; line-height: 1.7; }
+.review-card .actions { flex-wrap: wrap; }

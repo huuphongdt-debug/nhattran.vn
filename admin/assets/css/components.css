@@ -1,0 +1,327 @@
+/*
+ * COMPONENTS.CSS
+ * Các thành phần dùng chung trong khu vực Admin.
+ * File này được layout.css tải cho mọi module quản trị.
+ */
+
+:root {
+    /* Chỉnh các giá trị nền tảng tại đây thay vì sửa từng selector. */
+    --component-text: #243650;
+    --component-label: #334155;
+    --component-muted: #64748b;
+    --component-border: #cbd5e1;
+    --component-surface: #ffffff;
+    --component-primary: #2563eb;
+    --component-primary-soft: #eff6ff;
+    --component-danger: #be123c;
+    --component-danger-soft: #fff1f2;
+    --component-radius: 8px;
+}
+
+/* Typography dùng chung cho workspace, topbar và sidebar. */
+.admin-shell .admin-workspace,
+.admin-shell .admin-topbar,
+.admin-shell .admin-sidebar {
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.admin-shell .admin-workspace :is(button, input, select, textarea) {
+    font-family: inherit;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.admin-shell .admin-workspace h1 {
+    margin: 0;
+    font-size: 28px;
+    line-height: 1.35;
+    font-weight: 700;
+    letter-spacing: -.02em;
+}
+
+.admin-shell .admin-workspace h2 {
+    font-size: 19px;
+    line-height: 1.4;
+    font-weight: 650;
+}
+
+/* Header trang và nhóm nút hành động. */
+.admin-shell .admin-workspace :is(.page-header, .project-heading) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 0 0 24px;
+    padding: 0;
+}
+
+.admin-shell .admin-workspace :is(.page-header, .project-heading) p {
+    margin: 8px 0 0;
+    color: var(--component-muted);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.admin-shell .admin-workspace :is(.page-actions, .actions, .form-actions, .project-nav) {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.admin-shell .admin-workspace .project-nav {
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.admin-shell .admin-workspace td .project-nav {
+    margin: 0;
+}
+
+/* Nút dùng chung và các trạng thái màu. */
+.admin-shell .admin-workspace :is(.btn, .btn-search, .btn-reset, .project-button) {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 42px;
+    height: auto;
+    padding: 9px 16px;
+    border: 1px solid transparent;
+    border-radius: var(--component-radius);
+    font-size: 14px;
+    line-height: 1.4;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.admin-shell .admin-workspace :is(.btn-primary, .btn-search, .project-button) {
+    background: var(--component-primary);
+    color: var(--component-surface);
+}
+
+.admin-shell .admin-workspace :is(.btn-back, .btn-secondary, .btn-muted, .btn-reset) {
+    border-color: #dce3ee;
+    background: var(--component-surface);
+    color: #40546e;
+}
+
+.admin-shell .admin-workspace .btn-edit {
+    background: var(--component-primary-soft);
+    color: #1d4ed8;
+}
+
+.admin-shell .admin-workspace :is(.btn-delete, .btn-danger) {
+    background: var(--component-danger-soft);
+    color: var(--component-danger);
+}
+
+.admin-shell .admin-workspace :is(.btn, .project-button, .btn-search):hover {
+    filter: brightness(.96);
+}
+
+/* Input, select và textarea dùng chung. */
+.admin-shell .admin-workspace :is(input:not([type="checkbox"]):not([type="radio"]):not([type="hidden"]), select, textarea) {
+    min-height: 44px;
+    padding: 10px 12px;
+    border: 1px solid var(--component-border);
+    border-radius: var(--component-radius);
+    background: var(--component-surface);
+    color: var(--component-text);
+    box-shadow: none;
+}
+
+.admin-shell .admin-workspace :is(input, select, textarea):focus {
+    outline: 3px solid #dbeafe;
+    border-color: #3b82f6;
+}
+
+.admin-shell .admin-workspace :is(input[type="checkbox"], input[type="radio"]) {
+    accent-color: var(--component-primary);
+}
+
+.admin-shell .admin-workspace :is(label, .form-label) {
+    color: var(--component-label);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.admin-shell .admin-workspace :is(.help, .help-text, .form-help, .filter-result, .table-summary) {
+    color: var(--component-muted);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* Panel và bảng dùng chung. */
+.admin-shell .admin-workspace :is(.card, .form-box, .form-card, .filter-box, .table-box, .project-panel) {
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    background: var(--component-surface);
+    box-shadow: none;
+}
+
+.admin-shell .admin-workspace :is(.filter-box, .form-box, .form-card, .card, .project-panel) {
+    padding: 24px;
+    margin-bottom: 24px;
+}
+
+.admin-shell .admin-workspace table {
+    font-size: 14px;
+    border-collapse: collapse;
+}
+
+.admin-shell .admin-workspace th {
+    padding: 14px 16px;
+    color: #52627a;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.admin-shell .admin-workspace td {
+    padding: 16px;
+    font-size: 14px;
+    line-height: 1.55;
+}
+
+.admin-shell .admin-workspace td :is(.btn, .btn-edit, .btn-delete) {
+    min-height: 34px;
+    padding: 7px 10px;
+    font-size: 13px;
+}
+
+/* Giữ các nút thao tác trong bảng trên cùng một hàng. */
+.admin-shell .admin-workspace td > .actions {
+    display: inline-flex;
+    flex-wrap: nowrap;
+    width: max-content;
+    gap: 10px;
+}
+
+.admin-shell .admin-workspace td > .actions > .btn {
+    flex: 0 0 auto;
+}
+
+.admin-shell .admin-workspace .admin-actions-cell {
+    width: 190px;
+    min-width: 190px;
+    white-space: nowrap;
+}
+
+/* Quy tắc riêng cho bảng sản phẩm nhiều cột. */
+.admin-shell .admin-workspace .admin-products-table {
+    table-layout: auto;
+}
+
+.admin-shell .admin-workspace .admin-products-table td:nth-child(2) { min-width: 240px; }
+.admin-shell .admin-workspace .admin-products-table td:nth-child(3) { min-width: 120px; }
+.admin-shell .admin-workspace .admin-products-table td:nth-child(4) { min-width: 140px; }
+.admin-shell .admin-workspace .admin-products-table td:nth-child(11) { min-width: 130px; }
+.admin-shell .admin-workspace .admin-products-table td:last-child { min-width: 170px; }
+
+.admin-shell .admin-workspace .admin-products-table :is(th, td):last-child {
+    position: sticky;
+    right: 0;
+    z-index: 1;
+    background: var(--component-surface);
+    box-shadow: -4px 0 8px -5px #94a3b8;
+}
+
+.admin-shell .admin-workspace .admin-products-table th:last-child {
+    background: #f8fafc;
+}
+
+.admin-shell .admin-workspace :is(.sku, .mobile-product-sku) {
+    overflow-wrap: break-word;
+    font-family: inherit;
+    font-size: 13px;
+}
+
+.admin-shell .admin-workspace :is(.badge, .status-badge, .status-active, .status-draft, .status-inactive) {
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+/* Icon SVG dùng chung trong menu và nút. */
+.admin-shell .admin-icon {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    flex: 0 0 auto;
+    vertical-align: -.2em;
+}
+
+.admin-shell .admin-sidebar .admin-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.admin-shell .admin-menu-button {
+    display: grid;
+    place-items: center;
+}
+
+.admin-shell .admin-menu-button .admin-icon {
+    width: 22px;
+    height: 22px;
+}
+
+.admin-shell .admin-topbar .admin-website {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+}
+
+/* Typography riêng cho các khối dashboard. */
+.admin-shell .dash-main :is(.dash-stat-bottom, .dash-panel-heading > span, .dash-panel-heading a, .dash-note, .dash-footer, .dash-secondary a) { font-size: 13px; }
+.admin-shell .dash-main :is(.dash-actions strong, .dash-review a, .dash-product-status > div:not(.dash-panel-heading)) { font-size: 14px; }
+.admin-shell .dash-main :is(.dash-actions small, .dash-table td small, .dash-status) { font-size: 12px; }
+.admin-shell .dash-main .dash-stat-top { font-size: 15px; }
+.admin-shell .dash-main .dash-action-icon .admin-icon { width: 23px; height: 23px; }
+
+.admin-shell .admin-workspace .project-empty {
+    padding: 46px 20px;
+}
+
+.admin-shell .admin-workspace .project-empty p {
+    max-width: 600px;
+    margin: 10px auto 24px;
+    color: var(--component-muted);
+}
+
+/* Khoảng cách và kích thước trên màn hình nhỏ. */
+@media (max-width: 700px) {
+    .admin-shell .admin-workspace :is(.filter-box, .form-box, .form-card, .card, .project-panel) {
+        padding: 18px;
+    }
+
+    .admin-shell .admin-workspace h1 {
+        font-size: 24px;
+    }
+
+    .admin-shell .admin-workspace :is(.page-header, .project-heading) {
+        align-items: flex-start;
+        gap: 14px;
+    }
+
+    .admin-shell .admin-workspace .page-actions {
+        width: 100%;
+    }
+
+    .admin-shell .admin-workspace .page-actions > :is(.btn, .project-button) {
+        flex: 1 1 160px;
+    }
+
+    body.admin-shell .admin-workspace > :is(main, .container, .page) {
+        padding: 20px 14px;
+    }
+
+    .admin-shell .admin-topbar .admin-website {
+        display: none;
+    }
+}
+.admin-shell .admin-post-action { display: inline-flex; margin: 0; padding: 0; }
+.admin-shell .admin-post-action > button { font-family: inherit; cursor: pointer; }

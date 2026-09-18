@@ -1,0 +1,130 @@
+:root {
+    /* Đổi màu, khoảng cách hoặc bo góc tại đây để áp dụng toàn trang. */
+    --delete-text: #14213d;
+    --delete-muted: #475569;
+    --delete-background: #f3f4f6;
+    --delete-surface: #ffffff;
+    --delete-border: #e5e7eb;
+    --delete-danger: #dc2626;
+    --delete-primary: #2563eb;
+    --delete-primary-hover: #1d4ed8;
+    --delete-secondary: #e5e7eb;
+    --delete-radius: 8px;
+}
+
+/* Chuẩn hóa kích thước để padding không làm tràn khung. */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Nền tảng chung của trang xác nhận xóa. */
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 40px;
+    background: var(--delete-background);
+    color: var(--delete-text);
+    font-family: Arial, sans-serif;
+}
+
+/* Khung thông báo xác nhận hoặc lỗi. */
+.container {
+    width: min(650px, 100%);
+    margin: 80px auto;
+    padding: 35px;
+    border-radius: 14px;
+    background: var(--delete-surface);
+    box-shadow: 0 8px 25px rgba(15, 23, 42, .08);
+    text-align: center;
+}
+
+.icon {
+    margin-bottom: 15px;
+    font-size: 50px;
+}
+
+h1 {
+    margin: 0 0 15px;
+    color: var(--delete-danger);
+    font-size: 26px;
+}
+
+p {
+    margin: 0 0 25px;
+    color: var(--delete-muted);
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.manufacturer-name {
+    color: var(--delete-text);
+    font-weight: 700;
+}
+
+.product-count {
+    color: var(--delete-danger);
+    font-weight: 700;
+}
+
+/* Nhóm nút quay lại và chuyển tới danh sách sản phẩm. */
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 11px 20px;
+    border: 0;
+    border-radius: var(--delete-radius);
+    font: inherit;
+    font-size: 16px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn-back {
+    background: var(--delete-secondary);
+    color: #111827;
+}
+
+.btn-back:hover {
+    background: #d1d5db;
+}
+
+.btn-products {
+    background: var(--delete-primary);
+    color: var(--delete-surface);
+}
+
+.btn-products:hover {
+    background: var(--delete-primary-hover);
+}
+
+/* Điều chỉnh khung và nút cho màn hình nhỏ. */
+@media (max-width: 700px) {
+    body {
+        padding: 20px 14px;
+    }
+
+    .container {
+        margin: 30px auto;
+        padding: 24px 18px;
+    }
+
+    h1 {
+        font-size: 23px;
+    }
+
+    .buttons,
+    .buttons .btn {
+        width: 100%;
+    }
+}

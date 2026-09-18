@@ -1,0 +1,473 @@
+:root {
+    /* Đổi màu, khoảng cách hoặc bo góc tại đây để áp dụng toàn trang. */
+    --service-text: #172033;
+    --service-label: #374151;
+    --service-muted: #6b7280;
+    --service-border: #e5e7eb;
+    --service-surface: #ffffff;
+    --service-surface-muted: #f9fafb;
+    --service-background: #f3f4f6;
+    --service-primary: #2563eb;
+    --service-primary-hover: #1d4ed8;
+    --service-danger: #dc2626;
+    --service-danger-surface: #fee2e2;
+    --service-success: #166534;
+    --service-success-surface: #dcfce7;
+    --service-radius: 8px;
+    --service-card-radius: 12px;
+}
+
+/* Chuẩn hóa kích thước cho toàn bộ phần tử. */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Nền tảng chung của trang danh sách dịch vụ. */
+body {
+    background: var(--service-background);
+    color: var(--service-text);
+    font-family: Arial, sans-serif;
+}
+
+/* Thanh đầu trang và thông tin quản trị viên. */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    height: 76px;
+    padding: 0 40px;
+    border-bottom: 1px solid var(--service-border);
+    background: var(--service-surface);
+}
+
+.logo {
+    color: var(--service-text);
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.admin-info {
+    color: #111827;
+    font-size: 18px;
+}
+
+.admin-info strong {
+    margin-left: 5px;
+}
+
+/* Khung nội dung chính. */
+.container {
+    width: min(1400px, calc(100% - 40px));
+    margin: 0 auto;
+    padding: 50px 30px;
+}
+
+/* Tiêu đề trang và nhóm nút điều hướng. */
+.page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.page-header h1 {
+    margin: 0;
+    font-size: 32px;
+}
+
+.page-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Kiểu nền tảng cho mọi nút. */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 12px 18px;
+    border: 0;
+    border-radius: var(--service-radius);
+    font: inherit;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn-dashboard {
+    background: #e5e7eb;
+    color: #111827;
+}
+
+.btn-dashboard:hover {
+    background: #d1d5db;
+}
+
+.btn-primary {
+    background: var(--service-primary);
+    color: var(--service-surface);
+}
+
+.btn-primary:hover {
+    background: var(--service-primary-hover);
+}
+
+/* Thông báo kết quả thao tác. */
+.message,
+.error {
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    border-radius: var(--service-radius);
+}
+
+.message {
+    background: var(--service-success-surface);
+    color: var(--service-success);
+}
+
+.error {
+    background: var(--service-danger-surface);
+    color: #991b1b;
+}
+
+/* Bảng danh sách dịch vụ. */
+.table-box {
+    overflow: hidden;
+    border-radius: var(--service-card-radius);
+    background: var(--service-surface);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, .05);
+}
+
+.table-summary {
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--service-border);
+    color: var(--service-muted);
+    font-size: 14px;
+}
+
+.table-summary strong {
+    color: var(--service-text);
+}
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    min-width: 950px;
+    border-collapse: collapse;
+}
+
+th {
+    padding: 16px;
+    border-bottom: 1px solid var(--service-border);
+    background: var(--service-surface-muted);
+    color: var(--service-label);
+    font-size: 14px;
+    font-weight: 600;
+    text-align: left;
+    white-space: nowrap;
+}
+
+td {
+    padding: 16px;
+    border-bottom: 1px solid var(--service-border);
+    font-size: 15px;
+    vertical-align: middle;
+}
+
+tr:last-child td {
+    border-bottom: 0;
+}
+
+tr:hover td {
+    background: var(--service-surface-muted);
+}
+
+/* Tên, mô tả, icon và thứ tự dịch vụ. */
+.service-name {
+    color: var(--service-text);
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.service-description {
+    max-width: 420px;
+    color: var(--service-muted);
+    line-height: 1.5;
+}
+
+.service-icon,
+.mobile-service-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--service-radius);
+    background: #eff6ff;
+}
+
+.service-icon {
+    width: 44px;
+    height: 44px;
+    font-size: 22px;
+}
+
+.sort-order {
+    color: var(--service-label);
+    font-weight: 600;
+}
+
+/* Nhãn trạng thái. */
+.status {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.status-active {
+    background: var(--service-success-surface);
+    color: var(--service-success);
+}
+
+.status-inactive {
+    background: var(--service-danger-surface);
+    color: #991b1b;
+}
+
+/* Các nút sửa và xóa. */
+.actions {
+    display: flex;
+    gap: 8px;
+    white-space: nowrap;
+}
+
+.btn-edit,
+.btn-delete {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 34px;
+    padding: 7px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.btn-edit {
+    background: #eff6ff;
+    color: var(--service-primary);
+}
+
+.btn-edit:hover {
+    background: #dbeafe;
+}
+
+.btn-delete {
+    background: var(--service-danger-surface);
+    color: var(--service-danger);
+}
+
+.btn-delete:hover {
+    background: #fecaca;
+}
+
+/* Trạng thái chưa có dữ liệu. */
+.empty {
+    padding: 80px 20px;
+    color: var(--service-muted);
+    font-size: 18px;
+    text-align: center;
+}
+
+/* Card dịch vụ thay cho bảng trên mobile. */
+.mobile-service-list {
+    display: none;
+}
+
+.mobile-service-card {
+    padding: 16px;
+    border-bottom: 1px solid var(--service-border);
+    background: var(--service-surface);
+}
+
+.mobile-service-card:last-child {
+    border-bottom: 0;
+}
+
+.mobile-service-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.mobile-service-title {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    gap: 10px;
+}
+
+.mobile-service-icon {
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+    font-size: 20px;
+}
+
+.mobile-service-name {
+    color: var(--service-text);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.35;
+}
+
+.mobile-service-id {
+    flex-shrink: 0;
+    padding: 4px 8px;
+    border-radius: 6px;
+    background: var(--service-background);
+    color: var(--service-muted);
+    font-size: 13px;
+}
+
+.mobile-service-description {
+    margin-bottom: 12px;
+    color: var(--service-muted);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.mobile-service-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.mobile-service-order {
+    color: var(--service-muted);
+    font-size: 13px;
+}
+
+.mobile-service-actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+}
+
+.mobile-service-actions .btn-edit,
+.mobile-service-actions .btn-delete {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40px;
+    margin: 0;
+}
+
+/* Responsive cho tablet và điện thoại. */
+@media (max-width: 768px) {
+    .header {
+        min-height: 70px;
+        height: auto;
+        padding: 14px 20px;
+    }
+
+    .logo {
+        font-size: 21px;
+    }
+
+    .admin-info {
+        font-size: 13px;
+        text-align: right;
+    }
+
+    .container {
+        padding: 25px 15px;
+    }
+
+    .page-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+
+    .page-header h1 {
+        font-size: 25px;
+    }
+
+    .page-actions,
+    .page-actions .btn {
+        width: 100%;
+    }
+
+    .page-actions .btn {
+        flex: 1;
+    }
+
+    .table-summary {
+        padding: 13px 15px;
+        font-size: 13px;
+    }
+
+    .table-wrapper {
+        display: none;
+    }
+
+    .mobile-service-list {
+        display: block;
+    }
+
+    .table-box {
+        border-radius: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 18px;
+    }
+
+    .admin-info {
+        font-size: 12px;
+    }
+
+    .page-header h1 {
+        font-size: 23px;
+    }
+
+    .mobile-service-card {
+        padding: 14px;
+    }
+
+    .mobile-service-name {
+        font-size: 15px;
+    }
+
+    .mobile-service-description {
+        font-size: 13px;
+    }
+
+    .mobile-service-actions .btn-edit,
+    .mobile-service-actions .btn-delete {
+        font-size: 13px;
+    }
+}

@@ -1,0 +1,192 @@
+:root {
+    /* Đổi màu, khoảng cách hoặc bo góc tại đây để áp dụng toàn trang. */
+    --category-form-text: #172033;
+    --category-form-muted: #6b7280;
+    --category-form-border: #d1d5db;
+    --category-form-border-soft: #e5e7eb;
+    --category-form-surface: #ffffff;
+    --category-form-background: #f3f4f6;
+    --category-form-primary: #2563eb;
+    --category-form-primary-hover: #1d4ed8;
+    --category-form-danger: #b91c1c;
+    --category-form-danger-surface: #fee2e2;
+    --category-form-secondary: #e5e7eb;
+    --category-form-radius: 8px;
+}
+
+/* Chuẩn hóa kích thước để padding không làm tràn bố cục. */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Nền tảng chung của trang sửa danh mục. */
+body {
+    min-height: 100vh;
+    background: var(--category-form-background);
+    color: var(--category-form-text);
+    font-family: Arial, sans-serif;
+}
+
+/* Thanh đầu trang và thông tin quản trị viên. */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 20px 40px;
+    border-bottom: 1px solid var(--category-form-border-soft);
+    background: var(--category-form-surface);
+}
+
+.logo {
+    color: #0f1f3d;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.admin-name {
+    color: #111827;
+    font-size: 18px;
+}
+
+/* Khung giới hạn chiều rộng nội dung. */
+.container {
+    width: min(900px, calc(100% - 40px));
+    margin: 50px auto;
+}
+
+/* Tiêu đề trang và nút quay lại. */
+.page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 25px;
+}
+
+.page-header h1 {
+    font-size: 32px;
+}
+
+/* Kiểu nền tảng cho các nút. */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 12px 20px;
+    border: 0;
+    border-radius: var(--category-form-radius);
+    font: inherit;
+    font-size: 16px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn-back {
+    background: var(--category-form-secondary);
+    color: #111827;
+}
+
+.btn-save {
+    width: 100%;
+    margin-top: 10px;
+    background: var(--category-form-primary);
+    color: var(--category-form-surface);
+}
+
+.btn-save:hover {
+    background: var(--category-form-primary-hover);
+}
+
+/* Khối chứa biểu mẫu chỉnh sửa. */
+.form-box {
+    padding: 30px;
+    border-radius: 12px;
+    background: var(--category-form-surface);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, .05);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+/* Kiểu chung cho các trường nhập liệu. */
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid var(--category-form-border);
+    border-radius: var(--category-form-radius);
+    background: var(--category-form-surface);
+    color: var(--category-form-text);
+    font: inherit;
+    font-size: 16px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: 3px solid rgba(37, 99, 235, .15);
+    border-color: var(--category-form-primary);
+}
+
+.form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* Thông báo lỗi khi dữ liệu không hợp lệ. */
+.error {
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border-radius: var(--category-form-radius);
+    background: var(--category-form-danger-surface);
+    color: var(--category-form-danger);
+}
+
+.required {
+    color: #dc2626;
+}
+
+/* Điều chỉnh form cho màn hình nhỏ. */
+@media (max-width: 700px) {
+    .header {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 16px 20px;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    .admin-name {
+        font-size: 14px;
+    }
+
+    .container {
+        width: min(100% - 28px, 900px);
+        margin: 25px auto;
+    }
+
+    .page-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .form-box {
+        padding: 20px;
+    }
+}

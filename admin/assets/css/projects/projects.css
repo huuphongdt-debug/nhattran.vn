@@ -1,0 +1,260 @@
+:root {
+    /* Đổi màu, khoảng cách hoặc bo góc tại đây để áp dụng toàn trang. */
+    --project-text: #172033;
+    --project-label: #334155;
+    --project-muted: #64748b;
+    --project-border: #e2e8f0;
+    --project-input-border: #cbd5e1;
+    --project-surface: #ffffff;
+    --project-surface-muted: #f8fafc;
+    --project-primary: #2563eb;
+    --project-primary-hover: #1d4ed8;
+    --project-danger: #991b1b;
+    --project-danger-surface: #fee2e2;
+    --project-success: #166534;
+    --project-success-surface: #dcfce7;
+    --project-radius: 8px;
+    --project-card-radius: 12px;
+}
+
+/* Chuẩn hóa kích thước để padding không làm tràn bố cục. */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Nền tảng chung của module dự án. */
+body {
+    margin: 0;
+    background: var(--project-surface-muted);
+    color: var(--project-text);
+    font: 15px/1.6 Arial, sans-serif;
+}
+
+a {
+    color: #175ab5;
+    text-decoration: none;
+}
+
+/* Khung nội dung chính. */
+.project-admin {
+    width: min(1160px, calc(100% - 40px));
+    margin: 30px auto;
+}
+
+/* Tiêu đề trang và nhóm điều hướng. */
+.project-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin: 25px 0;
+}
+
+.project-heading h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+.project-heading p,
+small {
+    color: var(--project-muted);
+}
+
+/* Nút thêm/lưu dự án. */
+.project-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 11px 20px;
+    border: 0;
+    border-radius: var(--project-radius);
+    background: var(--project-primary);
+    color: var(--project-surface);
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.project-button:hover {
+    background: var(--project-primary-hover);
+}
+
+/* Khối bao quanh bảng và form. */
+.project-panel {
+    padding: 28px;
+    border: 1px solid var(--project-border);
+    border-radius: var(--project-card-radius);
+    background: var(--project-surface);
+}
+
+.project-form {
+    display: grid;
+    gap: 20px;
+}
+
+.project-form label {
+    display: grid;
+    gap: 7px;
+    font-weight: 600;
+}
+
+/* Trường nhập liệu và lựa chọn. */
+.project-form input:not([type="checkbox"]),
+.project-form textarea,
+.project-form select {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid var(--project-input-border);
+    border-radius: 7px;
+    background: var(--project-surface);
+    color: var(--project-text);
+    font: inherit;
+}
+
+.project-form input:not([type="checkbox"]):focus,
+.project-form textarea:focus,
+.project-form select:focus {
+    outline: 3px solid rgba(37, 99, 235, .12);
+    border-color: var(--project-primary);
+}
+
+.project-form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.project-columns {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+/* Checkbox trạng thái, nổi bật và xóa ảnh. */
+.project-form .project-check {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.project-form .project-check input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    flex: 0 0 18px;
+    margin: 0;
+    accent-color: var(--project-primary);
+}
+
+.project-preview {
+    width: 240px;
+    max-width: 100%;
+    border-radius: var(--project-radius);
+}
+
+/* Thông báo kết quả thao tác. */
+.project-alert {
+    padding: 14px;
+    border-radius: var(--project-radius);
+    background: var(--project-success-surface);
+    color: var(--project-success);
+}
+
+.project-alert.error {
+    background: var(--project-danger-surface);
+    color: var(--project-danger);
+}
+
+.project-empty {
+    padding: 35px 0;
+    text-align: center;
+}
+
+/* Bảng danh sách dự án. */
+.project-table-wrap {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+th,
+td {
+    padding: 16px 12px;
+    border-bottom: 1px solid var(--project-border);
+}
+
+th {
+    background: var(--project-surface-muted);
+    color: var(--project-label);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+td {
+    font-size: 14px;
+}
+
+.project-badge {
+    display: block;
+    color: var(--project-primary);
+}
+
+/* Nhóm nút thao tác trong bảng và form. */
+.project-nav,
+.actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.project-nav form {
+    margin: 0;
+}
+
+:focus-visible {
+    outline: 3px solid #60a5fa;
+    outline-offset: 3px;
+}
+
+/* Responsive cho màn hình nhỏ. */
+@media (max-width: 640px) {
+    .project-admin {
+        width: calc(100% - 28px);
+        margin: 20px auto;
+    }
+
+    .project-panel {
+        padding: 18px;
+    }
+
+    .project-columns {
+        grid-template-columns: 1fr;
+    }
+
+    .project-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .project-heading .page-actions,
+    .project-heading .page-actions > * {
+        width: 100%;
+    }
+
+    .project-heading .page-actions > * {
+        justify-content: center;
+    }
+
+    .actions .btn,
+    .project-nav .project-button,
+    .project-nav > a {
+        flex: 1 1 auto;
+    }
+}

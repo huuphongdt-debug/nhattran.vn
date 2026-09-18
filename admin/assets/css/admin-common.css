@@ -1,0 +1,68 @@
+/* Khung giao diện dùng chung cho các màn hình quản trị. */
+:root {
+    /* Các giá trị nền tảng được dùng lại trong toàn bộ khu vực Admin. */
+    --admin-ink: #172033;
+    --admin-muted: #6b7280;
+    --admin-border: #e5e7eb;
+    --admin-surface: #ffffff;
+    --admin-background: #f3f4f6;
+    --admin-header-height: 76px;
+    --admin-mobile-header-height: 64px;
+    --admin-page-padding: 40px;
+    --admin-mobile-page-padding: 18px;
+}
+
+/* Nền và màu chữ mặc định cho các trang quản trị. */
+body {
+    background: var(--admin-background);
+    color: var(--admin-ink);
+}
+
+/* Header dùng chung cho các module Admin cũ. */
+header.header {
+    min-height: var(--admin-header-height) !important;
+    padding: 0 var(--admin-page-padding) !important;
+    background: var(--admin-surface) !important;
+    border-bottom: 1px solid var(--admin-border) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+}
+
+/* Nhận diện logo và thông tin tài khoản trong header. */
+header.header .logo {
+    font-size: 28px !important;
+    font-weight: 700 !important;
+    color: var(--admin-ink) !important;
+    letter-spacing: .1px;
+}
+
+header.header .admin-info,
+header.header .admin-name {
+    font-size: 16px !important;
+    color: var(--admin-muted) !important;
+}
+
+header.header .admin-info strong,
+header.header .admin-name strong {
+    margin-left: 5px;
+    color: var(--admin-ink);
+}
+
+/* Thu nhỏ header trên màn hình điện thoại. */
+@media (max-width: 640px) {
+    header.header {
+        min-height: var(--admin-mobile-header-height) !important;
+        padding: 0 var(--admin-mobile-page-padding) !important;
+    }
+
+    header.header .logo {
+        font-size: 20px !important;
+    }
+
+    header.header .admin-info,
+    header.header .admin-name {
+        font-size: 13px !important;
+        text-align: right;
+    }
+}
